@@ -1,0 +1,109 @@
+{% extends 'r2n2/base.html' %}
+
+{% block userinfo %}
+<!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ current_user.first_name}} {{ current_user.last_name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  {{ current_user.first_name}} {{ current_user.last_name}} 
+                  <small>{{ current_user.email}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-info btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-danger btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+		  
+		  
+		 
+{% endblock %}
+
+{% block content %}
+<section class="content">
+		
+	<div class="box box-solid bg-blue-gradient">
+        <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp;Sex Ratio - Select LSGD  </h3>
+			</div>
+
+		<div class="box-footer text-black">
+            <div class="box-body">	
+			<table border=0px width=100%>
+	
+			<tr height=40px>
+			  <td width="35%">
+                  <label for="lsgd_name">Name of LSGD</label>
+				  <form method="POST">  		{% csrf_token %}
+					<select name ="lsgd_selected" class="form-control"> {% for l in lsgds %} <option value={{ l.lsgd_code }} {% if l.lsgd_code == lsgd_selected %} selected {% endif %}>{{ l.lsgd_name }}  {{ l.lsgd_type}}  {% endfor %} </select>
+			  </td>
+			  
+			  <td width="5%"> <label for="inputEmail3"></label> </td>
+			  
+			  <td width="40%">
+                  
+					
+			  </td>
+			   <td width="3%"> <label for="inputEmail3"></label> </td>
+
+			  <td width="20%">
+                <label for="lsgd_year_of_formation"></label>
+				<input type="submit" class="form-control btn btn-primary" value="Show"> </form>
+			  </td>
+			</tr> 			
+			<!-- /.box-body -->
+
+			</table>
+		    </div>
+          </div>
+		 </div>
+		 
+<div class="box box-solid bg-blue-gradient">
+  <div class="box-header">
+    <h3 class="box-title">Sex Ratio based on 2011 Census</h3>
+  </div>
+  <!-- /.box-header -->
+ 
+ <div class="box-footer text-black">
+  <div class="box-body">
+
+    <table id="lsgd_data" class="table table-bordered table-striped table-hover" cellspacing="0" width="100%">
+          
+		  <thead> <tr> <th>General Ratio</th> <th>Child Ratio</th> </tr> </thead>
+
+          <tbody>
+              <tr><td>Male : {{ answers.0.population_male }}</td><td>Boys : {{ answers.0.children_0_to_6_age_male }}</td></tr>
+              <tr><td>Female : {{ answers.0.population_female }}</td><td>Girls : {{ answers.0.children_0_to_6_age_female }}</td></tr>
+              <tr><td><h3>Ratio : {{ gratio  }} / 1000 Male</td></h3></td><td><h3>Female : {{ cratio }} / 1000 Boys</h3></td></tr>
+			  <tr><td>District Male : {{ dsr }}</td><td>Boys : {{ answers.0.children_0_to_6_age_male }}</td></tr>  
+              
+          </tbody>
+        </table>
+  </div>
+  <!-- /.box-body -->
+  </div>
+</div>
+<!-- /.box -->
+
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

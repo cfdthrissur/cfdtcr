@@ -1,0 +1,283 @@
+{% extends 'r2n2/base.html' %}
+
+
+{% block userinfo %}
+<!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ current_user.first_name}} {{ current_user.last_name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  {{ current_user.first_name}} {{ current_user.last_name}} 
+                  <small>{{ current_user.email}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-info btn-flat">Change Password</a>
+                </div>
+                <div class="pull-right">
+                  <a href="/" class="btn btn-danger btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+		  
+		  
+{% endblock %}
+
+{% block content %}
+<section class="content">
+
+<!-- MESSAGE BOX -----------------------------------------------------------------------------------------
+          <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Message Board </h3>
+			</div>
+		
+			<div class="box-footer text-black">			
+            <div class="box-body">	
+			<marquee> <b> You are requested to update the details asked on or before 31st August 2018 </b> </marquee>
+		    </div>
+         </div>
+		 </div>
+ END MESSAGE BOX ----------------------------------------------------------------------------------------- -->
+		 
+
+<!-- FIRST MENU --------------------------------------------------------------------------------------------------->		 
+<div class="box ">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Data Entry </h3>
+			</div>
+<div class="box-footer text-black">			
+            <div class="box-body">	
+ <div class="row">
+        
+        <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+           <a href="/data/gdls/"> <div class="small-box bg-aqua"> 
+            <div class="inner">
+              <span class="info-box-number"><b>Data Entry</b></span>
+              <p>Enter Details  </p> 
+			  
+            </div>
+            <div class="icon">
+              <i class="ion ion-monitor"></i>
+            </div>
+          </div>
+        </div> 
+		</a>
+		<!-- ./col -->
+		
+		<div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+           <a href="/rpts/view/"> <div class="small-box bg-aqua"> 
+            <div class="inner">
+              <span class="info-box-number"><b>Reports</b></span>
+              <p>Show Reports </p> 
+			  
+            </div>
+            <div class="icon">
+              <i class="ion ion-document-text"></i>
+            </div>
+          </div>
+        </div> 
+		</a>
+		<!-- ./col -->
+		
+		<div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+           <a href="/login/lang/"> <div class="small-box bg-aqua"> 
+            <div class="inner">
+              <span class="info-box-number"><b> Language Settings</b></span>
+              <p>Change Language   </p> 
+			  
+            </div>
+            <div class="icon">
+              <i class="ion ion-ios-settings"></i>
+            </div>
+          </div>
+        </div> 
+		</a>
+		<!-- ./col -->
+
+		
+		
+</div>
+<!-- ./row -->
+</div>
+</div>
+</div>
+
+<!-- SECOND MENU --------------------------------------------------------------------------------------------------->		 
+<div class="box ">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; LSGIs, Blocks, Taluks, Assembly and Parliament Constituency Details</h3>
+			</div>
+<div class="box-footer text-black">			
+            <div class="box-body">	
+ <div class="row">
+        <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+           <a href="/rpts/lsgd/"> <div class="small-box bg-green"> 
+            <div class="inner">
+              <span class="info-box-number"><b>LSGIs</b></span>
+              <p>View/Add Details  </p> 
+			  
+            </div>
+            <div class="icon">
+              <i class="ion ion-ios-home"></i>
+            </div>
+          </div>
+        </div> 
+		</a>
+		<!-- ./col -->
+
+        <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+           <a href="/rpts/blck/"> <div class="small-box bg-green"> 
+            <div class="inner">
+              <span class="info-box-number"><b>Blocks</b></span>
+              <p>View/Add Details  </p> 
+			  
+            </div>
+            <div class="icon">
+              <i class="ion ion-ios-home-outline"></i>
+            </div>
+          </div>
+        </div> 
+		</a>
+		<!-- ./col -->
+		
+		<div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+           <a href="/rpts/talk/"> <div class="small-box bg-green"> 
+            <div class="inner">
+              <span class="info-box-number"><b>Taluks</b></span>
+              <p>View/Add Details </p> 
+			  
+            </div>
+            <div class="icon">
+              <i class="ion ion-ios-home-outline"></i>
+            </div>
+          </div>
+        </div> 
+		</a>
+		<!-- ./col -->
+			<div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+           <a href="/rpts/asmb/"> <div class="small-box bg-green"> 
+            <div class="inner">
+              <span class="info-box-number"><b>Assembly</b></span>
+              <p>View/Add Details </p> 
+			  
+            </div>
+            <div class="icon">
+              <i class="ion ion-ios-pricetags"></i>
+            </div>
+          </div>
+        </div> 
+		</a>
+		<!-- ./col -->
+				<div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+           <a href="/rpts/plmt/"> <div class="small-box bg-green"> 
+            <div class="inner">
+              <span class="info-box-number"><b>Parliament</b></span>
+              <p>View/Add Details </p> 
+			  
+            </div>
+            <div class="icon">
+              <i class="ion ion-ios-pricetags"></i>
+            </div>
+          </div>
+        </div> 
+		</a>
+		<!-- ./col -->
+		
+		<!-- ./col -->
+				<div class="col-lg-3 col-xs-6">
+		 <!-- small box -->
+           <a href="/login/cont/"> <div class="small-box bg-green"> 
+            <div class="inner">
+              <span class="info-box-number"><b>Contacts</b></span>
+              <p>View LSGD Contacts </p> 
+			  
+            </div>
+            <div class="icon">
+              <i class="ion ion-android-contacts"></i>
+            </div>
+          </div>
+        </div> 
+		</a>
+		<!-- ./col -->
+		
+</div>
+<!-- ./row -->
+</div>
+</div>
+</div>
+
+<!-- THHIRD MENU --------------------------------------------------------------------------------------------------->		 
+<div class="box ">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Settings and User Profile </h3>
+			</div>
+<div class="box-footer text-black">			
+            <div class="box-body">	
+ <div class="row">
+        <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+           <a href="/data/gdls/"> <div class="small-box bg-red"> 
+            <div class="inner">
+              <span class="info-box-number"><b>Settings</b></span>
+              <p>Primary Settings  </p> 
+			  
+            </div>
+            <div class="icon">
+              <i class="ion ion-settings"></i>
+            </div>
+          </div>
+        </div> 
+		</a>
+		<!-- ./col -->
+
+        <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+           <a href="/data/gdls/"> <div class="small-box bg-red"> 
+            <div class="inner">
+              <span class="info-box-number"><b>My Profile</b></span>
+              <p>View/Edit Profile  </p> 
+			  
+            </div>
+            <div class="icon">
+              <i class="ion ion-person"></i>
+            </div>
+          </div>
+        </div> 
+		</a>
+		<!-- ./col -->
+		
+
+		
+</div>
+<!-- ./row -->
+</div>
+</div>
+</div>
+ <div class="row">
+
+ </div>
+
+</section>
+
+{% endblock %}

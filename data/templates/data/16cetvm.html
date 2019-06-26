@@ -1,0 +1,461 @@
+{% extends 'r2n2/base.html' %}
+
+{% block userinfo %}
+<!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ current_user.first_name}} {{ current_user.last_name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  {{ current_user.first_name}} {{ current_user.last_name}} 
+                  <small>{{ current_user.email}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-info btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-danger btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+		  
+		  
+{% endblock %}
+
+
+{% block content_header %}
+	<section class="content-header">
+	<h1> 
+		{{ lsgd_selected.0.lsgd_code }} -
+        {{ lsgd_selected.0.lsgd_name }} - 
+        {{ lsgd_selected.0.lsgd_type }} -
+		{{ data_entry_year }}
+    </h1>
+	
+	<ol class="breadcrumb">
+       
+     </ol>
+    </section>	
+{% endblock %}
+
+
+
+	
+{% block content %}
+<section class="content">
+
+<!-- Left col -->
+<section class="col-lg-3 col-md-3">
+		
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/gdls/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">1</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">തദ്ദേശസ്വയംഭരണസ്ഥാപനത്തിന്‍റെ പൊതുവിവരങ്ങള്‍ </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/demp/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">2</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ജനസംഖ്യാ വിവരങ്ങള്‍ (2011) </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/sddc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">3</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികളുടെ ലിംഗം തിരിച്ചുള്ള കണക്കുകള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/swdd/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">4</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ഭിന്നശേഷിയുള്ള കുട്ടികളുടെ ലിംഗം തിരിച്ചുള്ള കണക്ക് </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/msc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">5</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികളുടെ രോഗാതുരത്വം സ്ഥിതിവിവരങ്ങള്‍ </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/prs/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">6</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ഗര്‍ഭധാരണവുമായി ബന്ധപ്പെട്ട വിവരങ്ങൾ </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/bdr/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">7</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number"> കുട്ടികളുടെ ജനനമരണ കണക്കുകള്‍   </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/nhs/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">8</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികളുടെ പോഷണാരോഗ്യനിലവാരം </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/ecce/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">9</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ശൈശവകാല പരിരക്ഷയും വിദ്യാഭ്യാസവും </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/ioe/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">10</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">വിദ്യാഭ്യാസ സ്ഥാപനങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/sddosc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">11</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">സ്കൂള്‍ കുട്ടികളുടെ ലിംഗംതിരിച്ചുള്ള കണക്ക്</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/icos/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">12</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">വിദ്യാലയ പശ്ചാത്തല അവസ്ഥ</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/hci/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">13</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ആരോഗ്യ സേവന സംവിധാനങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/oifc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">14</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികള്‍ക്കായുള്ള ഇതര സേവനസ്ഥാപനങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/icop/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">15</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ജീവിതഗുണമേന്മയുമായി   ബന്ധപ്പെട്ട പശ്ചാത്തലഅവസ്ഥ</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="#"> <div class="info-box bg-red-gradient">
+                <span class="info-box-icon">16</span>
+                
+                <div class="info-box-content">
+                  <span class="info-box-number">അപായസാധ്യതയിലുള്‍പ്പെടുന്ന കുട്ടികളുടെ അവസ്ഥ</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/cp/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">17</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികള്‍ക്ക്  ലഭ്യമായ പങ്കാളിത്ത സംവിധാനങ്ങളും സൗകര്യങ്ങളും</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/lcc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">18</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികള്‍ക്ക് ലഭ്യമായ കല/സാംസ്ക്കാരിക സ്ഥാപനങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/cfai/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">19</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ബാല സൗഹൃദ ഭരണ സംരംഭങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    </section>
+    <!-- Left Col -->
+
+			  
+<!-- Right col -->
+<section class="col-lg-9 col-md-9">
+
+<!-- Horizontal Form -->
+          <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Chidren Exposed to Vulnaribilities ( അപായസാധ്യതയിലുള്‍പ്പെടുന്ന കുട്ടികളുടെ അവസ്ഥ   )</h3>
+			</div>
+		
+			<div class="box-footer text-black">
+            <!-- /.box-header -->
+            <!-- form start -->
+			<!-- {{ questions }} -->
+			
+			<form class="form-horizontal" method="post">
+      {% csrf_token %}
+      
+      <div class="box-footer text-black">
+      <div class="box-body">	
+			<table border=0px width=100%>
+	
+                    <tr height=70px><td>
+                            <label for="Under_Orphanges" class="col-sm-8">1. {{ questions.0.question_text_m }}</label>
+                            <input id="Under_Orphanges" name="Under_Orphanges" type="text" size="7" value="{{ answers.0.Under_Orphanges}}"></td>
+                            <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                            <td><label for="Under_Premetric_Hostel" class="col-sm-8">2. {{ questions.1.question_text_m }}</label>
+                            <input id="Under_Premetric_Hostel" name="Under_Premetric_Hostel" type="text" size="7" value="{{ answers.0.Under_Premetric_Hostel}}"></td></td></tr>
+                    
+                            <tr height=70px><td>
+                            <label for="Missing" class="col-sm-8">3. {{ questions.2.question_text_m }}</label>
+                            <input id="Missing" name="Missing" type="text" size="7" value="{{ answers.0.Missing}}"></td>
+                            <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                            <td><label for="Conflict_with_Law" class="col-sm-8">4. {{ questions.3.question_text_m }}</label>
+                            <input id="Conflict_with_Law" name="Conflict_with_Law" type="text" size="7" value="{{ answers.0.Conflict_with_Law}}"></td></td></tr>
+                    
+                            <tr height=70px><td>
+                            <label for="Children_Under_CWC" class="col-sm-8">5. {{ questions.4.question_text_m }}</label>
+                            <input id="Children_Under_CWC" name="Children_Under_CWC" type="text" size="7" value="{{ answers.0.Children_Under_CWC}}"></td>
+                            <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                            <td><label for="POCSO_Cases" class="col-sm-8">6. {{ questions.5.question_text_m }}</label>
+                            <input id="POCSO_Cases" name="POCSO_Cases" type="text" size="7" value="{{ answers.0.POCSO_Cases}}"></td></td></tr>
+                    
+                            <tr height=70px><td>
+                            <label for="At_Risk" class="col-sm-8">7. {{ questions.6.question_text_m }}</label>
+                            <input id="At_Risk" name="At_Risk" type="text" size="7" value="{{ answers.0.At_Risk}}"></td>
+                            <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                            <td><label for="Adopted" class="col-sm-8">8. {{ questions.7.question_text_m }}</label>
+                            <input id="Adopted" name="Adopted" type="text" size="7" value="{{ answers.0.Adopted}}"></td></td></tr>
+                    
+                            <tr height=70px><td>
+                            <label for="Foster_Care_Sponsorship" class="col-sm-8">9. {{ questions.8.question_text_m }}</label>
+                            <input id="Foster_Care_Sponsorship" name="Foster_Care_Sponsorship" type="text" size="7" value="{{ answers.0.Foster_Care_Sponsorship}}"></td>
+                            <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                            <td><label for="Road_Accidents" class="col-sm-8">10. {{ questions.9.question_text_m }}</label>
+                            <input id="Road_Accidents" name="Road_Accidents" type="text" size="7" value="{{ answers.0.Road_Accidents}}"></td></td></tr>
+                    
+                            <tr height=70px><td>
+                            <label for="Calamities" class="col-sm-8">11. {{ questions.10.question_text_m }}</label>
+                            <input id="Calamities" name="Calamities" type="text" size="7" value="{{ answers.0.Calamities}}"></td>
+                            <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                            <td><label for="Orphant_Children" class="col-sm-8">12. {{ questions.11.question_text_m }}</label>
+                            <input id="Orphant_Children" name="Orphant_Children" type="text" size="7" value="{{ answers.0.Orphant_Children}}"></td></td></tr>
+                    
+                            <tr height=70px><td>
+                            <label for="HIV_Effected_Family" class="col-sm-8">13. {{ questions.12.question_text_m }}</label>
+                            <input id="HIV_Effected_Family" name="HIV_Effected_Family" type="text" size="7" value="{{ answers.0.HIV_Effected_Family}}"></td>
+                            <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                            <td><label for="Migrant_Labours" class="col-sm-8">14. {{ questions.13.question_text_m }}</label>
+                            <input id="Migrant_Labours" name="Migrant_Labours" type="text" size="7" value="{{ answers.0.Migrant_Labours}}"></td></td></tr>
+                    
+                            <tr height=70px><td>
+                            <label for="Diability" class="col-sm-8">15. {{ questions.14.question_text_m }}</label>
+                            <input id="Diability" name="Diability" type="text" size="7" value="{{ answers.0.Diability}}"></td>
+                            <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                            <td><label for="Bedridden" class="col-sm-8">16. {{ questions.15.question_text_m }}</label>
+                            <input id="Bedridden" name="Bedridden" type="text" size="7" value="{{ answers.0.Bedridden}}"></td></td></tr>
+                    
+                            <tr height=70px><td>
+                            <label for="Child_Labour" class="col-sm-8">17. {{ questions.16.question_text_m }}</label>
+                            <input id="Child_Labour" name="Child_Labour" type="text" size="7" value="{{ answers.0.Child_Labour}}"></td>
+                            <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                            <td><label for="Child_Marriage" class="col-sm-8">18. {{ questions.17.question_text_m }}</label>
+                            <input id="Child_Marriage" name="Child_Marriage" type="text" size="7" value="{{ answers.0.Child_Marriage}}"></td></td></tr>
+                    
+                            <tr height=70px><td>
+                            <label for="UnWed_Mothers" class="col-sm-8">19. {{ questions.18.question_text_m }}</label>
+                            <input id="UnWed_Mothers" name="UnWed_Mothers" type="text" size="7" value="{{ answers.0.UnWed_Mothers}}"></td>
+                            <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                            <td><label for="Physical_Punishment" class="col-sm-8">20. {{ questions.19.question_text_m }}</label>
+                            <input id="Physical_Punishment" name="Physical_Punishment" type="text" size="7" value="{{ answers.0.Physical_Punishment}}"></td></td></tr>
+                    
+                     
+                </table>           
+
+      <!-- /.box-body -->
+
+      <div class="box-footer">
+        <button type="submit" name="save_details" class="btn btn-primary">സംരക്ഷിക്കുക </button>
+        <button type="submit" name="next_page" class="btn btn-primary pull-right">മുന്നോട്ട്  </button>
+              <button type="submit" name="prev_page" style='margin-right:10px' class="btn btn-primary pull-right">പിന്നോട്ട്  </button>
+      </div>
+      <!-- /.box-footer -->
+    </div>
+            </form>
+		
+          </div>
+		  </div>
+		  
+          <!-- /.box -->
+</section>
+<!-- Right col -->
+
+
+</section>
+<!-- End of content -->
+{% endblock %}
+
+

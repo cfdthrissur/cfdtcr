@@ -1,0 +1,160 @@
+HTML ID006
+			<table border=0px width=100%>
+		<tr height=70px><td>
+		<label for="Preg_Reg_in_Time_G" class="col-sm-8">1. {{ questions.0.question_text }}</label>
+		<input id="Preg_Reg_in_Time_G" name="Preg_Reg_in_Time_G" type="text" size="7" value="{{ answers.0.Preg_Reg_in_Time_G}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Preg_Reg_in_Time_SC" class="col-sm-8">2. {{ questions.1.question_text }}</label>
+		<input id="Preg_Reg_in_Time_SC" name="Preg_Reg_in_Time_SC" type="text" size="7" value="{{ answers.0.Preg_Reg_in_Time_SC}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Preg_Reg_in_Time_ST" class="col-sm-8">3. {{ questions.2.question_text }}</label>
+		<input id="Preg_Reg_in_Time_ST" name="Preg_Reg_in_Time_ST" type="text" size="7" value="{{ answers.0.Preg_Reg_in_Time_ST}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Preg_Reg_not_Time_G" class="col-sm-8">4. {{ questions.3.question_text }}</label>
+		<input id="Preg_Reg_not_Time_G" name="Preg_Reg_not_Time_G" type="text" size="7" value="{{ answers.0.Preg_Reg_not_Time_G}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Preg_Reg_not_Time_SC" class="col-sm-8">5. {{ questions.4.question_text }}</label>
+		<input id="Preg_Reg_not_Time_SC" name="Preg_Reg_not_Time_SC" type="text" size="7" value="{{ answers.0.Preg_Reg_not_Time_SC}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Preg_Reg_not_Time_ST" class="col-sm-8">6. {{ questions.5.question_text }}</label>
+		<input id="Preg_Reg_not_Time_ST" name="Preg_Reg_not_Time_ST" type="text" size="7" value="{{ answers.0.Preg_Reg_not_Time_ST}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="JSSY_JSSK_G" class="col-sm-8">7. {{ questions.6.question_text }}</label>
+		<input id="JSSY_JSSK_G" name="JSSY_JSSK_G" type="text" size="7" value="{{ answers.0.JSSY_JSSK_G}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="JSSY_JSSK_SC" class="col-sm-8">8. {{ questions.7.question_text }}</label>
+		<input id="JSSY_JSSK_SC" name="JSSY_JSSK_SC" type="text" size="7" value="{{ answers.0.JSSY_JSSK_SC}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="JSSY_JSSK_ST" class="col-sm-8">9. {{ questions.8.question_text }}</label>
+		<input id="JSSY_JSSK_ST" name="JSSY_JSSK_ST" type="text" size="7" value="{{ answers.0.JSSY_JSSK_ST}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Birth_Reg__in_Time_G" class="col-sm-8">10. {{ questions.9.question_text }}</label>
+		<input id="Birth_Reg__in_Time_G" name="Birth_Reg__in_Time_G" type="text" size="7" value="{{ answers.0.Birth_Reg__in_Time_G}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Birth_Reg__in_Time_SC" class="col-sm-8">11. {{ questions.10.question_text }}</label>
+		<input id="Birth_Reg__in_Time_SC" name="Birth_Reg__in_Time_SC" type="text" size="7" value="{{ answers.0.Birth_Reg__in_Time_SC}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Birth_Reg__in_Time_ST" class="col-sm-8">12. {{ questions.11.question_text }}</label>
+		<input id="Birth_Reg__in_Time_ST" name="Birth_Reg__in_Time_ST" type="text" size="7" value="{{ answers.0.Birth_Reg__in_Time_ST}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="EBF_Mothers_G" class="col-sm-8">13. {{ questions.12.question_text }}</label>
+		<input id="EBF_Mothers_G" name="EBF_Mothers_G" type="text" size="7" value="{{ answers.0.EBF_Mothers_G}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="EBF_Mothers_SC" class="col-sm-8">14. {{ questions.13.question_text }}</label>
+		<input id="EBF_Mothers_SC" name="EBF_Mothers_SC" type="text" size="7" value="{{ answers.0.EBF_Mothers_SC}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="EBF_Mothers_ST" class="col-sm-8">15. {{ questions.14.question_text }}</label>
+		<input id="EBF_Mothers_ST" name="EBF_Mothers_ST" type="text" size="7" value="{{ answers.0.EBF_Mothers_ST}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="IFA_Tablet_G" class="col-sm-8">16. {{ questions.15.question_text }}</label>
+		<input id="IFA_Tablet_G" name="IFA_Tablet_G" type="text" size="7" value="{{ answers.0.IFA_Tablet_G}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="IFA_Tablet_SC" class="col-sm-8">17. {{ questions.16.question_text }}</label>
+		<input id="IFA_Tablet_SC" name="IFA_Tablet_SC" type="text" size="7" value="{{ answers.0.IFA_Tablet_SC}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="IFA_Tablet_ST" class="col-sm-8">18. {{ questions.17.question_text }}</label>
+		<input id="IFA_Tablet_ST" name="IFA_Tablet_ST" type="text" size="7" value="{{ answers.0.IFA_Tablet_ST}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Risk_Preg_G" class="col-sm-8">19. {{ questions.18.question_text }}</label>
+		<input id="Risk_Preg_G" name="Risk_Preg_G" type="text" size="7" value="{{ answers.0.Risk_Preg_G}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Risk_Preg_SC" class="col-sm-8">20. {{ questions.19.question_text }}</label>
+		<input id="Risk_Preg_SC" name="Risk_Preg_SC" type="text" size="7" value="{{ answers.0.Risk_Preg_SC}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Risk_Preg_ST" class="col-sm-8">21. {{ questions.20.question_text }}</label>
+		<input id="Risk_Preg_ST" name="Risk_Preg_ST" type="text" size="7" value="{{ answers.0.Risk_Preg_ST}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Still_Birth_G" class="col-sm-8">22. {{ questions.21.question_text }}</label>
+		<input id="Still_Birth_G" name="Still_Birth_G" type="text" size="7" value="{{ answers.0.Still_Birth_G}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Still_Birth_SC" class="col-sm-8">23. {{ questions.22.question_text }}</label>
+		<input id="Still_Birth_SC" name="Still_Birth_SC" type="text" size="7" value="{{ answers.0.Still_Birth_SC}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Still_Birth_ST" class="col-sm-8">24. {{ questions.23.question_text }}</label>
+		<input id="Still_Birth_ST" name="Still_Birth_ST" type="text" size="7" value="{{ answers.0.Still_Birth_ST}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Twins_G" class="col-sm-8">25. {{ questions.24.question_text }}</label>
+		<input id="Twins_G" name="Twins_G" type="text" size="7" value="{{ answers.0.Twins_G}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Twins_SC" class="col-sm-8">26. {{ questions.25.question_text }}</label>
+		<input id="Twins_SC" name="Twins_SC" type="text" size="7" value="{{ answers.0.Twins_SC}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Twins_ST" class="col-sm-8">27. {{ questions.26.question_text }}</label>
+		<input id="Twins_ST" name="Twins_ST" type="text" size="7" value="{{ answers.0.Twins_ST}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Institu_Delivery_G" class="col-sm-8">28. {{ questions.27.question_text }}</label>
+		<input id="Institu_Delivery_G" name="Institu_Delivery_G" type="text" size="7" value="{{ answers.0.Institu_Delivery_G}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Institu_Delivery_SC" class="col-sm-8">29. {{ questions.28.question_text }}</label>
+		<input id="Institu_Delivery_SC" name="Institu_Delivery_SC" type="text" size="7" value="{{ answers.0.Institu_Delivery_SC}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Institu_Delivery_ST" class="col-sm-8">30. {{ questions.29.question_text }}</label>
+		<input id="Institu_Delivery_ST" name="Institu_Delivery_ST" type="text" size="7" value="{{ answers.0.Institu_Delivery_ST}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Comple_Maternal_Health_Checkup_G" class="col-sm-8">31. {{ questions.30.question_text }}</label>
+		<input id="Comple_Maternal_Health_Checkup_G" name="Comple_Maternal_Health_Checkup_G" type="text" size="7" value="{{ answers.0.Comple_Maternal_Health_Checkup_G}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Comple_Maternal_Health_Checkup_SC" class="col-sm-8">32. {{ questions.31.question_text }}</label>
+		<input id="Comple_Maternal_Health_Checkup_SC" name="Comple_Maternal_Health_Checkup_SC" type="text" size="7" value="{{ answers.0.Comple_Maternal_Health_Checkup_SC}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Comple_Maternal_Health_Checkup_ST" class="col-sm-8">33. {{ questions.32.question_text }}</label>
+		<input id="Comple_Maternal_Health_Checkup_ST" name="Comple_Maternal_Health_Checkup_ST" type="text" size="7" value="{{ answers.0.Comple_Maternal_Health_Checkup_ST}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Women_SNP_G" class="col-sm-8">34. {{ questions.33.question_text }}</label>
+		<input id="Women_SNP_G" name="Women_SNP_G" type="text" size="7" value="{{ answers.0.Women_SNP_G}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Women_SNP_SC" class="col-sm-8">35. {{ questions.34.question_text }}</label>
+		<input id="Women_SNP_SC" name="Women_SNP_SC" type="text" size="7" value="{{ answers.0.Women_SNP_SC}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Women_SNP_ST" class="col-sm-8">36. {{ questions.35.question_text }}</label>
+		<input id="Women_SNP_ST" name="Women_SNP_ST" type="text" size="7" value="{{ answers.0.Women_SNP_ST}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Maternal_Death_G" class="col-sm-8">37. {{ questions.36.question_text }}</label>
+		<input id="Maternal_Death_G" name="Maternal_Death_G" type="text" size="7" value="{{ answers.0.Maternal_Death_G}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Maternal_Death_SC" class="col-sm-8">38. {{ questions.37.question_text }}</label>
+		<input id="Maternal_Death_SC" name="Maternal_Death_SC" type="text" size="7" value="{{ answers.0.Maternal_Death_SC}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Maternal_Death_ST" class="col-sm-8">39. {{ questions.38.question_text }}</label>
+		<input id="Maternal_Death_ST" name="Maternal_Death_ST" type="text" size="7" value="{{ answers.0.Maternal_Death_ST}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="MTP_Abortion_G" class="col-sm-8">40. {{ questions.39.question_text }}</label>
+		<input id="MTP_Abortion_G" name="MTP_Abortion_G" type="text" size="7" value="{{ answers.0.MTP_Abortion_G}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="MTP_Abortion_SC" class="col-sm-8">41. {{ questions.40.question_text }}</label>
+		<input id="MTP_Abortion_SC" name="MTP_Abortion_SC" type="text" size="7" value="{{ answers.0.MTP_Abortion_SC}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="MTP_Abortion_ST" class="col-sm-8">42. {{ questions.41.question_text }}</label>
+		<input id="MTP_Abortion_ST" name="MTP_Abortion_ST" type="text" size="7" value="{{ answers.0.MTP_Abortion_ST}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Couples_Without_Children_G" class="col-sm-8">43. {{ questions.42.question_text }}</label>
+		<input id="Couples_Without_Children_G" name="Couples_Without_Children_G" type="text" size="7" value="{{ answers.0.Couples_Without_Children_G}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		<td><label for="Couples_Without_Children_SC" class="col-sm-8">44. {{ questions.43.question_text }}</label>
+		<input id="Couples_Without_Children_SC" name="Couples_Without_Children_SC" type="text" size="7" value="{{ answers.0.Couples_Without_Children_SC}}"></td></td></tr>
+
+		<tr height=70px><td>
+		<label for="Couples_Without_Children_ST" class="col-sm-8">45. {{ questions.44.question_text }}</label>
+		<input id="Couples_Without_Children_ST" name="Couples_Without_Children_ST" type="text" size="7" value="{{ answers.0.Couples_Without_Children_ST}}"></td>
+		<td> <label for="inputEmail3" class="col-sm-8"></label> </td>

@@ -1,0 +1,526 @@
+{% extends 'r2n2/base.html' %}
+
+{% block userinfo %}
+<!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ current_user.first_name}} {{ current_user.last_name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  {{ current_user.first_name}} {{ current_user.last_name}} 
+                  <small>{{ current_user.email}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-info btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-danger btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+		  
+		  
+{% endblock %}
+
+
+{% block content_header %}
+	<section class="content-header">
+	<h1> 
+		{{ lsgd_selected.0.lsgd_code }} -
+        {{ lsgd_selected.0.lsgd_name }} - 
+        {{ lsgd_selected.0.lsgd_type }} -
+		{{ data_entry_year }}
+    </h1>
+	
+	<ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> ENGLISH</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> മലയാളം </a></li>
+     </ol>
+    </section>	
+{% endblock %}
+
+
+
+	
+{% block content %}
+<section class="content">
+
+<!-- Left col -->
+<section class="col-lg-3 col-md-3">
+		
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/gdls/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">1</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">General Details of LSGD </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/demp/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">2</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Demographic Particulars (2011) </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href=""> <div class="info-box bg-red-gradient">
+      <span class="info-box-icon">1</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">General Details of LSGD </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/demp"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">2</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Demographic Particulars (2011) </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/sddc/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">3</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Sex Desegregated Data of Children</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/swdd/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">4</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Sex Wise Disability Data of Children </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/msc/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">5</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Morbidity Status of Children </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/prs/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">6</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Pregnancy Related Status</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/bdr/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">7</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Birth and Death Registration </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href=""> <div class="info-box bg-red-gradient">
+      <span class="info-box-icon">8</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Nutritional and Health Status </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/ecce/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">9</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Early Chilhood Care and Education</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/ioe/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">10</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Institutions of Education</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+<!-- ./row -->
+
+<div class="/data/sddosc/">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="#"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">11</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Sex Desegregated Data of School Children</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/icos/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">12</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Infrastructural Conditions of School</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/hci/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">13</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Health Care Institutions</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/oifc/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">14</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Other  Institution for Children</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/icop/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">15</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Infrastructural Conditions on PQLI</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/cetv/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">16</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Chidren Exposed to Vulnaribilities</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/cp/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">17</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Child Participation</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/lcc/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">18</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Literary Cultural Centres</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-6 col-xs-12">
+    <a href="/data/cfai/"> <div class="info-box bg-blue-gradient">
+      <span class="info-box-icon">19</span>
+
+      <div class="info-box-content">
+        <span class="info-box-number">Child Friendly Administrative Initative</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div></a>
+</div>
+
+</section>
+<!-- Left Col -->
+
+
+
+			  
+<!-- Right col -->
+<section class="col-lg-9 col-md-9">
+
+<!-- Horizontal Form -->
+          <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Nutritional and Health Status ( കുട്ടികളുടെ പോഷണാരോഗ്യനിലവാരം  )</h3>
+			</div>
+		
+			<div class="box-footer text-black">
+            <!-- /.box-header -->
+            <!-- form start -->
+			<!-- {{ questions }} -->
+			
+			<form class="form-horizontal" method="post">
+      {% csrf_token %}
+      
+      <div class="box box-solid bg-blue-gradient">
+        <div class="box-header with-border">
+          <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Babies/Children Details </h3>
+      </div>
+      <div class="box-footer text-black">
+      <div class="box-body">	
+			<table border=0px width=100%>
+	
+                <tr height=70px><td>
+                    <label for="Newborn_measured" class="col-sm-8">1. {{ questions.0.question_text }}</label>
+                    <input id="Newborn_measured" name="Newborn_measured" type="text"  value="{{ answers.0.Newborn_measured}}"  size="7"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Newborn_Normal" class="col-sm-8">2. {{ questions.1.question_text }}</label>
+                    <input id="Newborn_Normal" name="Newborn_Normal" type="text"  value="{{ answers.0.Newborn_Normal}}"  size="7"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Newborn_Mild" class="col-sm-8">3. {{ questions.2.question_text }}</label>
+                    <input id="Newborn_Mild" name="Newborn_Mild" type="text" class="form-control" value="{{ answers.0.Newborn_Mild}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Newborn_Moderate" class="col-sm-8">4. {{ questions.3.question_text }}</label>
+                    <input id="Newborn_Moderate" name="Newborn_Moderate" type="text" class="form-control" value="{{ answers.0.Newborn_Moderate}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Newborn_Severe" class="col-sm-8">5. {{ questions.4.question_text }}</label>
+                    <input id="Newborn_Severe" name="Newborn_Severe" type="text" class="form-control" value="{{ answers.0.Newborn_Severe}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Under3_measured" class="col-sm-8">6. {{ questions.5.question_text }}</label>
+                    <input id="Under3_measured" name="Under3_measured" type="text" class="form-control" value="{{ answers.0.Under3_measured}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Under3_Normal" class="col-sm-8">7. {{ questions.6.question_text }}</label>
+                    <input id="Under3_Normal" name="Under3_Normal" type="text" class="form-control" value="{{ answers.0.Under3_Normal}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Under3_Mild" class="col-sm-8">8. {{ questions.7.question_text }}</label>
+                    <input id="Under3_Mild" name="Under3_Mild" type="text" class="form-control" value="{{ answers.0.Under3_Mild}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Under3_Moderate" class="col-sm-8">9. {{ questions.8.question_text }}</label>
+                    <input id="Under3_Moderate" name="Under3_Moderate" type="text" class="form-control" value="{{ answers.0.Under3_Moderate}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Under3_Severe" class="col-sm-8">10. {{ questions.9.question_text }}</label>
+                    <input id="Under3_Severe" name="Under3_Severe" type="text" class="form-control" value="{{ answers.0.Under3_Severe}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Three_5_measured" class="col-sm-8">11. {{ questions.10.question_text }}</label>
+                    <input id="Three_5_measured" name="Three_5_measured" type="text" class="form-control" value="{{ answers.0.Three_5_measured}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Three_5_Normal" class="col-sm-8">12. {{ questions.11.question_text }}</label>
+                    <input id="Three_5_Normal" name="Three_5_Normal" type="text" class="form-control" value="{{ answers.0.Three_5_Normal}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Three_5_Mild" class="col-sm-8">13. {{ questions.12.question_text }}</label>
+                    <input id="Three_5_Mild" name="Three_5_Mild" type="text" class="form-control" value="{{ answers.0.Three_5_Mild}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Three_5_Moderate" class="col-sm-8">14. {{ questions.13.question_text }}</label>
+                    <input id="Three_5_Moderate" name="Three_5_Moderate" type="text" class="form-control" value="{{ answers.0.Three_5_Moderate}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Three_5_Severe" class="col-sm-8">15. {{ questions.14.question_text }}</label>
+                    <input id="Three_5_Severe" name="Three_5_Severe" type="text" class="form-control" value="{{ answers.0.Three_5_Severe}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Adolescent_measured" class="col-sm-8">16. {{ questions.15.question_text }}</label>
+                    <input id="Adolescent_measured" name="Adolescent_measured" type="text" class="form-control" value="{{ answers.0.Adolescent_measured}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Adolescent_Normal" class="col-sm-8">17. {{ questions.16.question_text }}</label>
+                    <input id="Adolescent_Normal" name="Adolescent_Normal" type="text" class="form-control" value="{{ answers.0.Adolescent_Normal}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Adolescent_Mild" class="col-sm-8">18. {{ questions.17.question_text }}</label>
+                    <input id="Adolescent_Mild" name="Adolescent_Mild" type="text" class="form-control" value="{{ answers.0.Adolescent_Mild}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Adolescent_Moderate" class="col-sm-8">19. {{ questions.18.question_text }}</label>
+                    <input id="Adolescent_Moderate" name="Adolescent_Moderate" type="text" class="form-control" value="{{ answers.0.Adolescent_Moderate}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Adolescent_Severe" class="col-sm-8">20. {{ questions.19.question_text }}</label>
+                    <input id="Adolescent_Severe" name="Adolescent_Severe" type="text" class="form-control" value="{{ answers.0.Adolescent_Severe}}"></td></td></tr>
+            </table>
+            </div>
+              <div class="box box-solid bg-blue-gradient">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Pregnant Related</h3>
+               </div>
+             </div>
+             <div class="box-body">	
+
+                    <table border=0px width=100%>
+                    <tr height=70px><td>
+                    <label for="Pregnant_measured" class="col-sm-8">21. {{ questions.20.question_text }}</label>
+                    <input id="Pregnant_measured" name="Pregnant_measured" type="text" class="form-control" value="{{ answers.0.Pregnant_measured}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Pregnant_Normal" class="col-sm-8">22. {{ questions.21.question_text }}</label>
+                    <input id="Pregnant_Normal" name="Pregnant_Normal" type="text" class="form-control" value="{{ answers.0.Pregnant_Normal}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Pregnant_Mild" class="col-sm-8">23. {{ questions.22.question_text }}</label>
+                    <input id="Pregnant_Mild" name="Pregnant_Mild" type="text" class="form-control" value="{{ answers.0.Pregnant_Mild}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Pregnant_Moderate" class="col-sm-8">24. {{ questions.23.question_text }}</label>
+                    <input id="Pregnant_Moderate" name="Pregnant_Moderate" type="text" class="form-control" value="{{ answers.0.Pregnant_Moderate}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Pregnant_Severe" class="col-sm-8">25. {{ questions.24.question_text }}</label>
+                    <input id="Pregnant_Severe" name="Pregnant_Severe" type="text" class="form-control" value="{{ answers.0.Pregnant_Severe}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                </table>           
+
+      <!-- /.box-body -->
+
+		
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Save Details</button>
+                <button type="submit" class="btn btn-primary pull-right">Next Page </button>
+			    <button type="submit" style='margin-right:10px' class="btn btn-primary pull-right">Prev Page </button>
+              </div>
+              <!-- /.box-footer -->
+		    </div>
+            </form>
+		
+          </div>
+		  </div>
+		  
+          <!-- /.box -->
+</section>
+<!-- Right col -->
+
+
+</section>
+<!-- End of content -->
+{% endblock %}
+
+

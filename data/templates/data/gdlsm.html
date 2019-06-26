@@ -1,0 +1,613 @@
+{% extends 'r2n2/base.html' %}
+
+{% block userinfo %}
+<!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ current_user.first_name}} {{ current_user.last_name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  {{ current_user.first_name}} {{ current_user.last_name}} 
+                  <small>{{ current_user.email}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-info btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-danger btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+		  
+		  
+{% endblock %}
+
+
+{% block content_header %}
+	<section class="content-header">
+	<h1> 
+		<!--{{ lsgd_selected.0.lsgd_code }} -
+        {{ lsgd_selected.0.lsgd_name }} - 
+        {{ lsgd_selected.0.lsgd_type }} -
+		{{ data_entry_year }} -->
+		<p align="center"> {{ lsgd_selected.0.lsgd_name }} {{ lsgd_selected.0.lsgd_type }} ({{ lsgd_selected.0.lsgd_code }}) </p>
+    </h1>
+	
+	<!--ol class="breadcrumb">
+        <li><a href="/data/change_lang/"></a><i class="fa fa-dashboard"></i> ENGLISH</a></li>
+        <li><a href="/data/change_lang/"><i class="fa fa-dashboard"></i> മലയാളം </a></li>
+     </ol-->
+    </section>	
+{% endblock %}
+
+
+
+	
+{% block content %}
+<section class="content">
+
+<!-- Left col -->
+<section class="col-lg-3 col-md-3">
+		
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-red-gradient">
+            <span class="info-box-icon">1</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">തദ്ദേശസ്വയംഭരണസ്ഥാപനത്തിന്‍റെ പൊതുവിവരങ്ങള്‍ </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/demp/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">2</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">ജനസംഖ്യാ വിവരങ്ങള്‍ (2011) </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/sddc/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">3</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">കുട്ടികളുടെ ലിംഗം തിരിച്ചുള്ള കണക്കുകള്‍</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/swdd/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">4</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">ഭിന്നശേഷിയുള്ള കുട്ടികളുടെ ലിംഗം തിരിച്ചുള്ള കണക്ക് </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/msc/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">5</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">കുട്ടികളുടെ രോഗാതുരത്വം സ്ഥിതിവിവരങ്ങള്‍ </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/prs/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">6</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">ഗര്‍ഭധാരണവുമായി ബന്ധപ്പെട്ട വിവരങ്ങൾ </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/bdr/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">7</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number"> കുട്ടികളുടെ ജനനമരണ കണക്കുകള്‍   </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/nhs/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">8</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">കുട്ടികളുടെ പോഷണാരോഗ്യനിലവാരം </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/ecce/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">9</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">ശൈശവകാല പരിരക്ഷയും വിദ്യാഭ്യാസവും </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/ioe/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">10</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">വിദ്യാഭ്യാസ സ്ഥാപനങ്ങള്‍</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/sddosc/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">11</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">സ്കൂള്‍ കുട്ടികളുടെ ലിംഗംതിരിച്ചുള്ള കണക്ക്</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/icos/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">12</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">വിദ്യാലയ പശ്ചാത്തല അവസ്ഥ</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/hci/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">13</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">ആരോഗ്യ സേവന സംവിധാനങ്ങള്‍</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/oifc/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">14</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">കുട്ടികള്‍ക്കായുള്ള ഇതര സേവനസ്ഥാപനങ്ങള്‍</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/icop/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">15</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">ജീവിതഗുണമേന്മയുമായി   ബന്ധപ്പെട്ട പശ്ചാത്തലഅവസ്ഥ</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/cetv/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">16</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">അപായസാധ്യതയിലുള്‍പ്പെടുന്ന കുട്ടികളുടെ അവസ്ഥ</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/cp/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">17</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">കുട്ടികള്‍ക്ക്  ലഭ്യമായ പങ്കാളിത്ത സംവിധാനങ്ങളും സൗകര്യങ്ങളും</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/lcc/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">18</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">കുട്ടികള്‍ക്ക് ലഭ്യമായ കല/സാംസ്ക്കാരിക സ്ഥാപനങ്ങള്‍</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="/data/cfai/"> <div class="info-box bg-blue-gradient">
+            <span class="info-box-icon">19</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">ബാല സൗഹൃദ ഭരണ സംരംഭങ്ങള്‍</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+</section>
+<!-- Left Col -->
+
+
+			  
+<!-- Right col -->
+<section class="col-lg-9 col-md-9">
+
+<!-- Horizontal Form -->
+		<form class="form-horizontal" method="post">
+		{% csrf_token %}
+          <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; തദ്ദേശസ്വയംഭരണസ്ഥാപനത്തിന്‍റെ പൊതുവിവരങ്ങള്‍ </h3>
+			</div>
+		
+			<div class="box-footer text-black">
+            <!-- /.box-header -->
+            <!-- form start -->			
+			
+            <div class="box-body">	
+			<table border=0px width=100%>
+	
+			<tr height=80px>
+			  <td width="48%">
+                  <label for="lsgd_name">{{ questions.0.question_text_m }}</label>
+				  <input name="lsgd_name" type="text" class="form-control"  value = "{{answers.0.lsgd_name}}" readonly="readonly">
+			  </td>
+			  
+			  <td width="4%"> <label for="inputEmail3"></label> </td>
+			  
+			  <td width="48%">
+                  <label for="lsgd_year_of_formation">{{ questions.1.question_text_m }}</label>
+				  <input name="lsgd_year_of_formation" type="text" class="form-control" value="{{ answers.0.lsgd_year_of_formation }}">
+			  </td>
+			</tr> 
+			
+			
+			<tr height=80px>
+			  <td>
+					<label for="lsgd_area_in_sqkm"> {{ questions.2.question_text_m }} </label>
+					<input name="lsgd_area_in_sqkm" type="text" class="form-control" value="{{ answers.0.lsgd_area_in_sqkm }}">
+			  </td> <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			
+			  <td>		  
+					<label for="lsgd_taluk_name">{{ questions.3.question_text_m }}</label> 
+					<!-- <input name="lsgd_taluk_name" type="text" class="form-control" value="{{ questions.3.question_text_m }}"> -->
+					<select name ="lsgd_taluk_name" class="form-control"> {% for t in taluks %} <option value={{ t.taluk_code }}>{{ t.taluk_name }}  {% endfor %} </select>
+			  </td>
+			</tr>
+			
+				
+			<tr height=80px>
+			  <td>
+					<label for="lsgd_block_name"> {{ questions.4.question_text_m }} </label>
+					<!-- <input name="lsgd_block_name" type="text" class="form-control" value="{{ questions.4.question_text_m }}"> -->
+					<select name ="lsgd_block_name" class="form-control"> {% for b in blocks %} <option value={{ b.block_code }}>{{ b.block_name }}  {% endfor %} </select>
+			 </td> <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			
+			  <td>			  
+					<label for="lsgd_parliamentary_constituency">{{ questions.5.question_text_m }}</label> 
+					<!-- <input name="lsgd_parliamentary_constituency" type="text" class="form-control" value="{{ questions.5.question_text_m }}"> -->
+					<select name ="lsgd_parliamentary_constituency" class="form-control"> {% for p in parliaments %} <option value={{ p.parliament_code }}>{{ p.parliament_name }}  {% endfor %} </select>
+
+			  </td>
+			</tr>
+			
+			
+			<tr height=80px>
+			  <td>
+					<label for="lsgd_assembly_constituency"> {{ questions.6.question_text_m }} </label>
+					<!-- <input name="lsgd_assembly_constituency" type="text" class="form-control" value="{{ questions.6.question_text_m }}"> -->
+					<select name ="lsgd_assembly_constituency" class="form-control"> {% for as in assemblys %} <option value={{ as.assembly_code }}>{{ as.assembly_name }}  {% endfor %} </select>					
+			 </td> <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			<td> </td>
+			
+			<!-- /.box-body -->
+
+			</table>
+			<div class="box-footer">
+                
+              </div>
+              <!-- /.box-footer -->
+		    </div>
+             
+		
+         </div>
+		 </div>
+		
+		 <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Ward Details</h3>
+			</div>
+		
+			<div class="box-footer text-black">
+            <!-- /.box-header -->
+            <!-- form start -->			
+			
+            <div class="box-body">	
+			<table border=0px width=100%>
+
+			<tr height=80px>
+
+			  <td width="48%">			  
+					<label for="lsgd_no_of_wards">{{ questions.7.question_text_m }}</label> 
+					<input name="lsgd_no_of_wards" type="text" class="form-control" value="{{ answers.0.lsgd_no_of_wards }}">
+			  </td><td width="4%"> <label for="inputEmail3" class="col-sm-8"></label> </td>
+				
+			  <td width="48%">
+					<label for="lsgd_no_of_female_wards"> {{ questions.8.question_text_m }} </label>
+					<input name="lsgd_no_of_female_wards" type="text" class="form-control" value="{{ answers.0.lsgd_no_of_female_wards }}">
+			 </td> 
+			</tr>
+			
+			<tr height=80px>
+
+			  <td>			  
+					<label for="lsgd_no_of_scst_wards">{{ questions.9.question_text_m }}</label> 
+					<input name="lsgd_no_of_scst_wards" type="text" class="form-control" value="{{ answers.0.lsgd_no_of_scst_wards }}">
+			  </td>
+			  </td><td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  <td> </td>
+			</tr>
+			
+			<!-- /.box-body -->
+
+			</table>
+			<div class="box-footer">
+                
+              </div>
+              <!-- /.box-footer -->
+		    </div>
+             
+		
+         </div>
+		 </div>
+		
+		 <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Rivers, Forest and Coastal Details</h3>
+			</div>
+		
+			<div class="box-footer text-black">
+            <!-- /.box-header -->
+            <!-- form start -->			
+			
+            <div class="box-body">	
+			<table border=0px width=100%>
+			
+			<tr height=80px>
+			  <td>
+					<label for="lsgd_no_of_rivers"> {{ questions.10.question_text_m }} </label>
+					<input name="lsgd_no_of_rivers" type="text" class="form-control" value="{{ answers.0.lsgd_no_of_rivers }}">
+			 </td> <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			
+			  <td>			  
+					<label for="lsgd_name_of_rivers">{{ questions.11.question_text_m }}</label> 
+					<textarea name="lsgd_name_of_rivers" rows="3" class="form-control"  value="{{ answers.0.lsgd_name_of_rivers }}"> </textarea> 
+			  </td>
+			</tr>
+					
+			<tr height=80px>
+			  <td>
+					<label for="lsgd_coastal_line_length_in_km"> {{ questions.12.question_text_m }} </label>
+					<input name="lsgd_coastal_line_length_in_km" type="text" class="form-control" value="{{ answers.0.lsgd_coastal_line_length_in_km }}">
+			 </td> <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			
+			  <td>			  	  
+					<label for="lsgd_forest_area_in_hectors">{{ questions.13.question_text_m }}</label> 
+					<input name="lsgd_forest_area_in_hectors" type="text" class="form-control" value="{{ answers.0.lsgd_forest_area_in_hectors }}">
+			  </td>
+			</tr>
+				
+				
+			<tr height=80px>
+			  <td>
+					<label for="lsgd_type_of_soil"> {{ questions.14.question_text_m }} </label>
+					<input name="lsgd_type_of_soil" type="text" class="form-control" value="{{ answers.0.lsgd_type_of_soil }}">
+					
+					
+			 </td> <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			
+			  <td>			  	  
+					<label for="lsgd_main_roads">{{ questions.15.question_text_m }}</label> 
+					<textarea name="lsgd_main_roads" rows="3" class="form-control" value="{{ answers.0.lsgd_main_roads }}"> </textarea> 
+			  </td>
+			</tr>
+					
+				
+			<tr height=80px>
+			  <td>
+					<label for="lsgd_nearest_railway_station"> {{ questions.16.question_text_m }} </label>
+					<input name="lsgd_nearest_railway_station" type="text" class="form-control" value="{{ answers.0.lsgd_nearest_railway_station }}">
+			 </td> <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			</tr>
+					
+						
+			<!-- /.box-body -->
+
+			</table>
+			<div class="box-footer">
+                
+              </div>
+              <!-- /.box-footer -->
+		    </div>
+             
+		
+         </div>
+		 </div>
+		
+		 <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Jilla Panchayath and Block Panchayath Details</h3>
+			</div>
+		
+			<div class="box-footer text-black">
+            <!-- /.box-header -->
+            <!-- form start -->			
+			
+            <div class="box-body">	
+			<table border=0px width=100%>
+	
+			<tr height=80px>
+			  <td>			  	  
+						<label for="lsgd_jilla_panchayath_name">{{ questions.17.question_text_m }}</label> 
+			  		<input name="lsgd_jilla_panchayath_name" type="text" class="form-control" value="{{ answers.0.lsgd_jilla_panchayath_name }}">
+			  </td> <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			
+			  <td>
+					<label for="lsgd_jilla_panchayath_ward"> {{ questions.18.question_text_m }} </label>
+					<input name="lsgd_jilla_panchayath_ward" type="text" class="form-control" value="{{ answers.0.lsgd_jilla_panchayath_ward }}">
+			 </td> 
+			</tr>
+			
+
+			
+			<tr height=80px>
+    		  <td>			  	  
+					<label for="lsgd_block_panchayath_name">{{ questions.19.question_text_m }}</label> 
+					<input name="lsgd_block_panchayath_name" type="text" class="form-control" value="{{ answers.0.lsgd_block_panchayath_name }}">
+		     </td>  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+		
+			
+			  <td>
+					<label for="lsgd_block_panchayath_wards"> {{ questions.20.question_text_m }} </label>
+					<input name="lsgd_block_panchayath_wards" type="text" class="form-control" value="{{ answers.0.lsgd_block_panchayath_wards }}">
+			</tr>
+		</table>
+		
+		 <div class="box-footer">
+                <button type="submit" name="save_details" class="btn btn-primary">സംരക്ഷിക്കുക </button>
+                <button type="submit" name="next_page" class="btn btn-primary pull-right">മുന്നോട്ട്  </button>
+			          <button type="submit" name="prev_page" style='margin-right:10px' class="btn btn-primary pull-right">പിന്നോട്ട്  </button>
+              </div>
+              <!-- /.box-footer -->
+		    </div>
+            </form>
+			
+		 </div>
+		 </div>
+		  
+			
+          <!-- /.box -->
+</section>
+<!-- Right col -->
+
+
+</section>
+<!-- End of content -->
+{% endblock %}
+
+

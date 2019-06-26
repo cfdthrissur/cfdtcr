@@ -1,0 +1,656 @@
+{% extends 'r2n2/base.html' %}
+
+{% block userinfo %}
+<!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ current_user.first_name}} {{ current_user.last_name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  {{ current_user.first_name}} {{ current_user.last_name}} 
+                  <small>{{ current_user.email}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-info btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-danger btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+		  
+		  
+{% endblock %}
+
+
+{% block content_header %}
+	<section class="content-header">
+	<h1> 
+		{{ lsgd_selected.0.lsgd_code }} -
+        {{ lsgd_selected.0.lsgd_name }} - 
+        {{ lsgd_selected.0.lsgd_type }} -
+		{{ data_entry_year }}
+    </h1>
+	
+	<ol class="breadcrumb">
+        
+     </ol>
+    </section>	
+{% endblock %}
+
+
+
+	
+{% block content %}
+<section class="content">
+
+<!-- Left col -->
+<section class="col-lg-3 col-md-3">
+		
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/gdls/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">1</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">തദ്ദേശസ്വയംഭരണസ്ഥാപനത്തിന്‍റെ പൊതുവിവരങ്ങള്‍ </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/demp/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">2</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ജനസംഖ്യാ വിവരങ്ങള്‍ (2011) </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/sddc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">3</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികളുടെ ലിംഗം തിരിച്ചുള്ള കണക്കുകള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/swdd/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">4</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ഭിന്നശേഷിയുള്ള കുട്ടികളുടെ ലിംഗം തിരിച്ചുള്ള കണക്ക് </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/msc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">5</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികളുടെ രോഗാതുരത്വം സ്ഥിതിവിവരങ്ങള്‍ </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/prs/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">6</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ഗര്‍ഭധാരണവുമായി ബന്ധപ്പെട്ട വിവരങ്ങൾ </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/bdr/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">7</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number"> കുട്ടികളുടെ ജനനമരണ കണക്കുകള്‍   </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/nhs/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">8</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികളുടെ പോഷണാരോഗ്യനിലവാരം </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/ecce/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">9</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ശൈശവകാല പരിരക്ഷയും വിദ്യാഭ്യാസവും </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/ioe/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">10</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">വിദ്യാഭ്യാസ സ്ഥാപനങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/sddosc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">11</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">സ്കൂള്‍ കുട്ടികളുടെ ലിംഗംതിരിച്ചുള്ള കണക്ക്</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/icos/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">12</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">വിദ്യാലയ പശ്ചാത്തല അവസ്ഥ</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/hci/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">13</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ആരോഗ്യ സേവന സംവിധാനങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="#"> <div class="info-box bg-red-gradient">
+                <span class="info-box-icon">14</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികള്‍ക്കായുള്ള ഇതര സേവനസ്ഥാപനങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/icop/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">15</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ജീവിതഗുണമേന്മയുമായി   ബന്ധപ്പെട്ട പശ്ചാത്തലഅവസ്ഥ</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/cetv/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">16</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">അപായസാധ്യതയിലുള്‍പ്പെടുന്ന കുട്ടികളുടെ അവസ്ഥ</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/cp/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">17</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികള്‍ക്ക്  ലഭ്യമായ പങ്കാളിത്ത സംവിധാനങ്ങളും സൗകര്യങ്ങളും</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/lcc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">18</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികള്‍ക്ക് ലഭ്യമായ കല/സാംസ്ക്കാരിക സ്ഥാപനങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/cfai/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">19</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ബാല സൗഹൃദ ഭരണ സംരംഭങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    </section>
+    <!-- Left Col -->
+
+<!-- Right col -->
+<section class="col-lg-9 col-md-9">
+
+<!-- Horizontal Form -->
+          <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Other  Institution for Children ( കുട്ടികള്‍ക്കായുള്ള ഇതരസേവനസ്ഥാപനങ്ങള്‍ )</h3>
+			</div>
+		
+			<div class="box-footer text-black">
+            <!-- /.box-header -->
+            <!-- form start -->
+			<!-- {{ questions }} -->
+			
+			<form class="form-horizontal" method="post">
+      {% csrf_token %}
+      
+          <div class="box-footer text-black">
+    <div class="box-body">	
+		<div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+           <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Disability Management_Institution (ഭിന്നശേഷി സഹായ സംവിധനങ്ങള്‍)</h3>
+           </div><div class="box-footer text-black"><div class="box-body">
+           
+           <table border=0px width=100%>
+           <tr height=70px><td>
+           <label for="Disability_Management_Institution" class="col-sm-8">1. {{ questions.0.question_text_m }}</label>
+           <input id="Disability_Management_Institution" name="Disability_Management_Institution" type="text" size="7" value="{{ answers.0.Disability_Management_Institution}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Disability_Management_Govt" class="col-sm-8">2. {{ questions.1.question_text_m }}</label>
+           <input id="Disability_Management_Govt" name="Disability_Management_Govt" type="text" size="7" value="{{ answers.0.Disability_Management_Govt}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Disability_Management_LSG" class="col-sm-8">3. {{ questions.2.question_text_m }}</label>
+           <input id="Disability_Management_LSG" name="Disability_Management_LSG" type="text" size="7" value="{{ answers.0.Disability_Management_LSG}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Disability_Management_NGO" class="col-sm-8">4. {{ questions.3.question_text_m }}</label>
+           <input id="Disability_Management_NGO" name="Disability_Management_NGO" type="text" size="7" value="{{ answers.0.Disability_Management_NGO}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Disability_Management_Private" class="col-sm-8">5. {{ questions.4.question_text_m }}</label>
+           <input id="Disability_Management_Private" name="Disability_Management_Private" type="text" size="7" value="{{ answers.0.Disability_Management_Private}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+           
+           </tr></table><div class="box-footer"></div></div></div></div>
+           <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+           <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Mental Health Institution (മാനസിക ആരോഗ്യ കേന്ദ്രങ്ങൾ))</h3>
+           </div><div class="box-footer text-black"><div class="box-body">
+           
+           <table border=0px width=100%>
+           <tr height=70px><td>
+           <label for="Mental_Health_Institution" class="col-sm-8">6. {{ questions.5.question_text_m }}</label>
+           <input id="Mental_Health_Institution" name="Mental_Health_Institution" type="text" size="7" value="{{ answers.0.Mental_Health_Institution}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Mental_Health_Govt" class="col-sm-8">7. {{ questions.6.question_text_m }}</label>
+           <input id="Mental_Health_Govt" name="Mental_Health_Govt" type="text" size="7" value="{{ answers.0.Mental_Health_Govt}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Mental_Health_LSG" class="col-sm-8">8. {{ questions.7.question_text_m }}</label>
+           <input id="Mental_Health_LSG" name="Mental_Health_LSG" type="text" size="7" value="{{ answers.0.Mental_Health_LSG}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Mental_Health_NGO" class="col-sm-8">9. {{ questions.8.question_text_m }}</label>
+           <input id="Mental_Health_NGO" name="Mental_Health_NGO" type="text" size="7" value="{{ answers.0.Mental_Health_NGO}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Mental_Health_Private" class="col-sm-8">10. {{ questions.9.question_text_m }}</label>
+           <input id="Mental_Health_Private" name="Mental_Health_Private" type="text" size="7" value="{{ answers.0.Mental_Health_Private}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+           
+           </tr></table><div class="box-footer"></div></div></div></div>
+           <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+           <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Special Education Institution (സ്പെഷല്‍/ബഡ്സ് സ്കൂള്‍ )</h3>
+           </div><div class="box-footer text-black"><div class="box-body">
+           
+           <table border=0px width=100%>
+           <tr height=70px><td>
+           <label for="Special_Education_Institution" class="col-sm-8">11. {{ questions.10.question_text_m }}</label>
+           <input id="Special_Education_Institution" name="Special_Education_Institution" type="text" size="7" value="{{ answers.0.Special_Education_Institution}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Special_Education_Govt" class="col-sm-8">12. {{ questions.11.question_text_m }}</label>
+           <input id="Special_Education_Govt" name="Special_Education_Govt" type="text" size="7" value="{{ answers.0.Special_Education_Govt}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Special_Education_LSG" class="col-sm-8">13. {{ questions.12.question_text_m }}</label>
+           <input id="Special_Education_LSG" name="Special_Education_LSG" type="text" size="7" value="{{ answers.0.Special_Education_LSG}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Special_Education_NGO" class="col-sm-8">14. {{ questions.13.question_text_m }}</label>
+           <input id="Special_Education_NGO" name="Special_Education_NGO" type="text" size="7" value="{{ answers.0.Special_Education_NGO}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Special_Education_Private" class="col-sm-8">15. {{ questions.14.question_text_m }}</label>
+           <input id="Special_Education_Private" name="Special_Education_Private" type="text" size="7" value="{{ answers.0.Special_Education_Private}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+           
+           </tr></table><div class="box-footer"></div></div></div></div>
+           <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">9
+           <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp;Institutional Care Institution (ഇൻസ്ടിടുഷണൽ കെയർ)</h3>
+           </div><div class="box-footer text-black"><div class="box-body">
+           
+           <table border=0px width=100%>
+           <tr height=70px><td>
+           <label for="Institutional_Care_Institution" class="col-sm-8">16. {{ questions.15.question_text_m }}</label>
+           <input id="Institutional_Care_Institution" name="Institutional_Care_Institution" type="text" size="7" value="{{ answers.0.Institutional_Care_Institution}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Institutional_Care_Govt" class="col-sm-8">17. {{ questions.16.question_text_m }}</label>
+           <input id="Institutional_Care_Govt" name="Institutional_Care_Govt" type="text" size="7" value="{{ answers.0.Institutional_Care_Govt}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Institutional_Care_LSG" class="col-sm-8">18. {{ questions.17.question_text_m }}</label>
+           <input id="Institutional_Care_LSG" name="Institutional_Care_LSG" type="text" size="7" value="{{ answers.0.Institutional_Care_LSG}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Institutional_Care_NGO" class="col-sm-8">19. {{ questions.18.question_text_m }}</label>
+           <input id="Institutional_Care_NGO" name="Institutional_Care_NGO" type="text" size="7" value="{{ answers.0.Institutional_Care_NGO}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Institutional_Care_Private" class="col-sm-8">20. {{ questions.19.question_text_m }}</label>
+           <input id="Institutional_Care_Private" name="Institutional_Care_Private" type="text" size="7" value="{{ answers.0.Institutional_Care_Private}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+           
+           </tr></table><div class="box-footer"></div></div></div></div>
+           <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+           <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Protection Services Institution (സംരക്ഷണ കേന്ദ്രങ്ങൾ )</h3>
+           </div><div class="box-footer text-black"><div class="box-body">
+           
+           <table border=0px width=100%>
+           <tr height=70px><td>
+           <label for="Protection_Services_Institution" class="col-sm-8">21. {{ questions.20.question_text_m }}</label>
+           <input id="Protection_Services_Institution" name="Protection_Services_Institution" type="text" size="7" value="{{ answers.0.Protection_Services_Institution}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Protection_Services_Govt" class="col-sm-8">22. {{ questions.21.question_text_m }}</label>
+           <input id="Protection_Services_Govt" name="Protection_Services_Govt" type="text" size="7" value="{{ answers.0.Protection_Services_Govt}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Protection_Services_LSG" class="col-sm-8">23. {{ questions.22.question_text_m }}</label>
+           <input id="Protection_Services_LSG" name="Protection_Services_LSG" type="text" size="7" value="{{ answers.0.Protection_Services_LSG}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Protection_Services_NGO" class="col-sm-8">24. {{ questions.23.question_text_m }}</label>
+           <input id="Protection_Services_NGO" name="Protection_Services_NGO" type="text" size="7" value="{{ answers.0.Protection_Services_NGO}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Protection_Services_Private" class="col-sm-8">25. {{ questions.24.question_text_m }}</label>
+           <input id="Protection_Services_Private" name="Protection_Services_Private" type="text" size="7" value="{{ answers.0.Protection_Services_Private}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+           
+           </tr></table><div class="box-footer"></div></div></div></div>
+           <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+           <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp;Scanning Centre Institution (സ്ക്കാനിംഗ് സെന്‍റര്‍)</h3>
+           </div><div class="box-footer text-black"><div class="box-body">
+           
+           <table border=0px width=100%>
+           <tr height=70px><td>
+           <label for="Scanning_Centre_Institution" class="col-sm-8">26. {{ questions.25.question_text_m }}</label>
+           <input id="Scanning_Centre_Institution" name="Scanning_Centre_Institution" type="text" size="7" value="{{ answers.0.Scanning_Centre_Institution}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Scanning_Centre_Govt" class="col-sm-8">27. {{ questions.26.question_text_m }}</label>
+           <input id="Scanning_Centre_Govt" name="Scanning_Centre_Govt" type="text" size="7" value="{{ answers.0.Scanning_Centre_Govt}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Scanning_Centre_LSG" class="col-sm-8">28. {{ questions.27.question_text_m }}</label>
+           <input id="Scanning_Centre_LSG" name="Scanning_Centre_LSG" type="text" size="7" value="{{ answers.0.Scanning_Centre_LSG}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Scanning_Centre_NGO" class="col-sm-8">29. {{ questions.28.question_text_m }}</label>
+           <input id="Scanning_Centre_NGO" name="Scanning_Centre_NGO" type="text" size="7" value="{{ answers.0.Scanning_Centre_NGO}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Scanning_Centre_Private" class="col-sm-8">30. {{ questions.29.question_text_m }}</label>
+           <input id="Scanning_Centre_Private" name="Scanning_Centre_Private" type="text" size="7" value="{{ answers.0.Scanning_Centre_Private}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+           
+           </tr></table><div class="box-footer"></div></div></div></div>
+           <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+           <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Theraphy Centre Institution (തെറാപ്പി സെന്‍റര്‍ )</h3>
+           </div><div class="box-footer text-black"><div class="box-body">
+           
+           <table border=0px width=100%>
+           <tr height=70px><td>
+           <label for="Theraphy_Centre_Institution" class="col-sm-8">31. {{ questions.30.question_text_m }}</label>
+           <input id="Theraphy_Centre_Institution" name="Theraphy_Centre_Institution" type="text" size="7" value="{{ answers.0.Theraphy_Centre_Institution}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Theraphy_Centre_Govt" class="col-sm-8">32. {{ questions.31.question_text_m }}</label>
+           <input id="Theraphy_Centre_Govt" name="Theraphy_Centre_Govt" type="text" size="7" value="{{ answers.0.Theraphy_Centre_Govt}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Theraphy_Centre_LSG" class="col-sm-8">33. {{ questions.32.question_text_m }}</label>
+           <input id="Theraphy_Centre_LSG" name="Theraphy_Centre_LSG" type="text" size="7" value="{{ answers.0.Theraphy_Centre_LSG}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Theraphy_Centre_NGO" class="col-sm-8">34. {{ questions.33.question_text_m }}</label>
+           <input id="Theraphy_Centre_NGO" name="Theraphy_Centre_NGO" type="text" size="7" value="{{ answers.0.Theraphy_Centre_NGO}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Theraphy_Centre_Private" class="col-sm-8">35. {{ questions.34.question_text_m }}</label>
+           <input id="Theraphy_Centre_Private" name="Theraphy_Centre_Private" type="text" size="7" value="{{ answers.0.Theraphy_Centre_Private}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+           
+           </tr></table><div class="box-footer"></div></div></div></div>
+           <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+           <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp;Palliataive Care / Hosspeace Institution (സ്വാന്തന ചികിത്സാ കേന്ദ്രങ്ങൾ)</h3>
+           </div><div class="box-footer text-black"><div class="box-body">
+           
+           <table border=0px width=100%>
+           <tr height=70px><td>
+           <label for="Palliataive_Care_Institution" class="col-sm-8">36. {{ questions.35.question_text_m }}</label>
+           <input id="Palliataive_Care_Institution" name="Palliataive_Care_Institution" type="text" size="7" value="{{ answers.0.Palliataive_Care_Institution}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Palliataive_Care_Govt" class="col-sm-8">37. {{ questions.36.question_text_m }}</label>
+           <input id="Palliataive_Care_Govt" name="Palliataive_Care_Govt" type="text" size="7" value="{{ answers.0.Palliataive_Care_Govt}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Palliataive_Care_LSG" class="col-sm-8">38. {{ questions.37.question_text_m }}</label>
+           <input id="Palliataive_Care_LSG" name="Palliataive_Care_LSG" type="text" size="7" value="{{ answers.0.Palliataive_Care_LSG}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Palliataive_Care_NGO" class="col-sm-8">39. {{ questions.38.question_text_m }}</label>
+           <input id="Palliataive_Care_NGO" name="Palliataive_Care_NGO" type="text" size="7" value="{{ answers.0.Palliataive_Care_NGO}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Palliataive_Care_Private" class="col-sm-8">40. {{ questions.39.question_text_m }}</label>
+           <input id="Palliataive_Care_Private" name="Palliataive_Care_Private" type="text" size="7" value="{{ answers.0.Palliataive_Care_Private}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+           
+           </tr></table><div class="box-footer"></div></div></div></div>
+           <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+           <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp;Clinical Lab Institution (ക്ലിനിക്കല്‍ ലാബ് )</h3>
+           </div><div class="box-footer text-black"><div class="box-body">
+           
+           <table border=0px width=100%>
+           <tr height=70px><td>
+           <label for="Clinical_Lab_Institution" class="col-sm-8">41. {{ questions.40.question_text_m }}</label>
+           <input id="Clinical_Lab_Institution" name="Clinical_Lab_Institution" type="text" size="7" value="{{ answers.0.Clinical_Lab_Institution}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Clinical_Lab_Govt" class="col-sm-8">42. {{ questions.41.question_text_m }}</label>
+           <input id="Clinical_Lab_Govt" name="Clinical_Lab_Govt" type="text" size="7" value="{{ answers.0.Clinical_Lab_Govt}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Clinical_Lab_LSG" class="col-sm-8">43. {{ questions.42.question_text_m }}</label>
+           <input id="Clinical_Lab_LSG" name="Clinical_Lab_LSG" type="text" size="7" value="{{ answers.0.Clinical_Lab_LSG}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Clinical_Lab_NGO" class="col-sm-8">44. {{ questions.43.question_text_m }}</label>
+           <input id="Clinical_Lab_NGO" name="Clinical_Lab_NGO" type="text" size="7" value="{{ answers.0.Clinical_Lab_NGO}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Clinical_Lab_Private" class="col-sm-8">45. {{ questions.44.question_text_m }}</label>
+           <input id="Clinical_Lab_Private" name="Clinical_Lab_Private" type="text" size="7" value="{{ answers.0.Clinical_Lab_Private}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+           
+           </tr></table><div class="box-footer"></div></div></div></div>
+           <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+           <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Deaddition Centres Institution (മദ്യമയക്ക് മരുന്ന് വിമോചന കേന്ദ്രം)</h3>
+           </div><div class="box-footer text-black"><div class="box-body">
+           
+           <table border=0px width=100%>
+           <tr height=70px><td>
+           <label for="Deaddition_Centres_Institution" class="col-sm-8">46. {{ questions.45.question_text_m }}</label>
+           <input id="Deaddition_Centres_Institution" name="Deaddition_Centres_Institution" type="text" size="7" value="{{ answers.0.Deaddition_Centres_Institution}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Deaddition_Centres_Govt" class="col-sm-8">47. {{ questions.46.question_text_m }}</label>
+           <input id="Deaddition_Centres_Govt" name="Deaddition_Centres_Govt" type="text" size="7" value="{{ answers.0.Deaddition_Centres_Govt}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Deaddition_Centres_LSG" class="col-sm-8">48. {{ questions.47.question_text_m }}</label>
+           <input id="Deaddition_Centres_LSG" name="Deaddition_Centres_LSG" type="text" size="7" value="{{ answers.0.Deaddition_Centres_LSG}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+           <td><label for="Deaddition_Centres_NGO" class="col-sm-8">49. {{ questions.48.question_text_m }}</label>
+           <input id="Deaddition_Centres_NGO" name="Deaddition_Centres_NGO" type="text" size="7" value="{{ answers.0.Deaddition_Centres_NGO}}"></td></td></tr>
+   
+           <tr height=70px><td>
+           <label for="Deaddition_Centres_Private" class="col-sm-8">50. {{ questions.49.question_text_m }}</label>
+           <input id="Deaddition_Centres_Private" name="Deaddition_Centres_Private" type="text" size="7" value="{{ answers.0.Deaddition_Centres_Private}}"></td>
+           <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                                  
+                </table>           
+
+      <!-- /.box-body -->
+
+		
+      <div class="box-footer">
+        <button type="submit" name="save_details" class="btn btn-primary">സംരക്ഷിക്കുക </button>
+        <button type="submit" name="next_page" class="btn btn-primary pull-right">മുന്നോട്ട്  </button>
+              <button type="submit" name="prev_page" style='margin-right:10px' class="btn btn-primary pull-right">പിന്നോട്ട്  </button>
+      </div>
+      <!-- /.box-footer -->
+    </div>
+            </form>
+		
+          </div>
+		  </div>
+		  
+          <!-- /.box -->
+</section>
+<!-- Right col -->
+
+
+</section>
+<!-- End of content -->
+{% endblock %}
+
+

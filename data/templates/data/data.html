@@ -1,0 +1,151 @@
+{% extends 'r2n2/base.html' %}
+
+{% block userinfo %}
+<!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ current_user.first_name}} {{ current_user.last_name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  {{ current_user.first_name}} {{ current_user.last_name}} 
+                  <small>{{ current_user.email}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-info btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="/" class="btn btn-danger btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+		  
+		  
+{% endblock %}
+
+
+{% block content_header %}
+	<section class="content-header">
+	<h1> 
+		{{ lsgd_selected.0.lsgd_code }} -
+        {{ lsgd_selected.0.lsgd_name }} - 
+        {{ lsgd_selected.0.lsgd_type }} -
+		{{ data_entry_year }}
+    </h1>
+	
+	<ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> ENGLISH</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> മലയാളം </a></li>
+     </ol>
+    </section>	
+{% endblock %}
+
+
+
+	
+{% block content %}
+<section class="content">
+
+<!-- Left col -->
+<section class="col-lg-3 col-md-3">
+		
+{% for h in headers %}
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+		
+		<form  method="post">
+		{% csrf_token %}
+		{% if forloop.counter == current_header %}
+          <a href="javascript:;" onclick="parentNode.submit();"> <div class="info-box bg-red-gradient">
+		{% else %}
+          <a href="javascript:;" onclick="parentNode.submit();"> <div class="info-box bg-blue-gradient">
+		{% endif %}
+            <span class="info-box-icon">{{ forloop.counter }}</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">{{ h.header_text}} </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+		<input type="hidden" name="clicked_header" value={{ forloop.counter }}>
+		</form>
+</div>
+<!-- ./row -->
+{% endfor %}
+
+</section>
+<!-- Left Col -->
+
+
+			  
+<!-- Right col -->
+<section class="col-lg-9 col-md-9">
+<!-- Horizontal Form -->
+          <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; {{ current_header_text }}</h3>
+			</div>
+		
+			<div class="box-footer text-black">
+            <!-- /.box-header -->
+            <!-- form start -->
+			
+			<form  method="post">
+			{% csrf_token %}
+            <div class="box-body">	
+	
+			{% for q in questions %}
+			{% if forloop.counter0|divisibleby:2 %}
+			<section class="col-lg-6 col-md-6">
+				<label for="{{q.question_text}}"> {{ q.question_text }} </label>
+				<input id="{{ forloop.counter }}" name="f{{ forloop.counter }}" type="text" class="form-control" placeholder="{{ q.question_text }}">
+			</section>
+			{% else %} 
+			<section class="col-lg-6 col-md-6">			  
+                 <label for="{{q.question_text}}">{{ q.question_text }}</label> 
+				  <input id="{{ forloop.counter }}" name="f{{ forloop.counter }}" type="text" class="form-control" placeholder="{{ q.question_text }}">
+				  </br>
+			</section>
+			{% endif %}
+			{% endfor %}
+      
+			</div>	  
+      
+			  
+			  <div class="box-footer">
+				<input type="hidden" name="clicked_header" value={{"20"|add:current_header}}>
+                <button type="submit" name="save_details" value="save_Detials" class="btn btn-primary">Save Details</button>
+                <button type="submit" name="next_page" value="next_page" class="btn btn-primary pull-right">Next Page </button>
+			    <button type="submit" name="prev_page" value="prev_page" style='margin-right:10px' class="btn btn-primary pull-right">Prev Page </button>
+				
+              </div>
+              <!-- /.box-footer -->
+		    </div>
+            </form>
+			
+          </div>
+		  </div>
+		  
+          <!-- /.box -->
+</section>
+<!-- Right col -->
+
+
+</section>
+<!-- End of content -->
+{% endblock %}
+
+

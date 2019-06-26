@@ -1,0 +1,190 @@
+{% extends 'r2n2/base.html' %}
+
+{% block userinfo %}
+<!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ current_user.first_name}} {{ current_user.last_name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  {{ current_user.first_name}} {{ current_user.last_name}} 
+                  <small>{{ current_user.email}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-info btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-danger btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+		  
+		  
+		 
+{% endblock %}
+
+{% block content %}
+<section class="content">
+		
+	<div class="box box-solid bg-blue-gradient">
+        <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp;Sex Ratio - Select LSGD  </h3>
+			</div>
+
+		<div class="box-footer text-black">
+            <div class="box-body">	
+			<table border=0px width=100%>
+	
+			<tr height=40px>
+			  <td width="35%">
+                  <label for="lsgd_name">Name of LSGD</label>
+				  <form method="POST">  		{% csrf_token %}
+					<select name ="lsgd_selected" class="form-control"> {% for l in lsgds %} <option value={{ l.lsgd_code }} {% if l.lsgd_code == lsgd_selected %} selected {% endif %}>{{ l.lsgd_name }}  {{ l.lsgd_type}}  {% endfor %} </select>
+			  </td>
+			  
+			  <td width="5%"> <label for="inputEmail3"></label> </td>
+			  
+			  <td width="40%">
+                  
+					
+			  </td>
+			   <td width="3%"> <label for="inputEmail3"></label> </td>
+
+			  <td width="20%">
+                <label for="lsgd_year_of_formation"></label>
+				<input type="submit" class="form-control btn btn-primary" value="Show"> </form>
+			  </td>
+			</tr> 			
+			<!-- /.box-body -->
+
+			</table>
+		    </div>
+          </div>
+		 </div>
+		 
+<div class="box box-solid bg-blue-gradient">
+  <div class="box-header">
+    <h3 class="box-title">Sex Ratio - {{ data_entry_year }}</h3><br>
+    <h3 class="box-title">Local Body : {{ current_lsgd.0 }}, Block : {{ blocks.0.block_name }}</h3>
+  </div>
+  <!-- /.box-header -->
+ 
+ <div class="box-footer text-black">
+  <div class="box-body">
+
+    <table id="lsgd_data" class="table table-bordered table-striped table-hover" cellspacing="0" width="100%">
+          
+		  <thead> <tr> <th>LSGD</th> <th>General Ratio</th> <th>Child Ratio</th><th width=50%>Graphical</th> </tr> </thead>
+
+          <tbody>
+          <tr><td>LSGD: {{ current_lsgd.0 }}</td><td>{{ sexratio.0 }} Female / 1000 Male</td><td>{{ sexratio.1 }} Girls/ 1000 Boys</td><td rowspan=3>
+              <canvas id="barChart" style="height:230px width=200px"></canvas>
+          </td></tr>
+          <tr><td>Block: {{ blocks.0.block_name }}</td><td>{{ sexratio.2 }} Female / 1000 Male</td><td>{{ sexratio.3 }} Girls/ 1000 Boys</td></tr>    
+          <tr><td>District : Thrissur</td><td>{{ sexratio.4 }} Female / 1000 Male</td><td>{{ sexratio.5 }} Girls/ 1000 Boys</td></tr>    
+              
+          </tbody>
+        </table>
+  </div>
+  <!-- /.box-body -->
+  </div>
+</div>
+<!-- /.box -->
+
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    $(function () {
+      /* ChartJS
+       * -------
+       * Here we will create a few charts using ChartJS
+       */
+  
+      //--------------
+      //- AREA CHART -
+      //--------------
+  
+  
+      var areaChartData = {
+        labels: ["Local", "Block", "District"],
+        datasets: [
+          {
+            label: "Female:Male",
+            fillColor: "rgba(244, 66, 191, 100)",
+            strokeColor: "rgba(210, 214, 222, 100)",
+            pointColor: "rgba(210, 214, 222, 100)",
+            pointStrokeColor: "#c1c7d1",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [{{sexratio.0}},{{sexratio.2}},{{sexratio.4}}]
+          },
+          {
+            label: "Girls:Boys",
+            fillColor: "rgba(244, 66, 191, 100)",
+            strokeColor: "rgba(210, 214, 222, 100)",
+            pointColor: "rgba(210, 214, 222, 100)",
+            pointStrokeColor: "#c1c7d1",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [{{sexratio.1}},{{sexratio.3}},{{sexratio.5}}]
+          }
+        
+        ]
+      };
+  
+      //-------------
+      //- BAR CHART -
+      //-------------
+      var barChartCanvas = $("#barChart").get(0).getContext("2d");
+      var barChart = new Chart(barChartCanvas);
+      var barChartData = areaChartData;
+      barChartData.datasets[1].fillColor = "#00a65a";
+      barChartData.datasets[1].strokeColor = "#00a65a";
+      barChartData.datasets[1].pointColor = "#00a65a";
+      var barChartOptions = {
+        //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+        scaleBeginAtZero: true,
+        //Boolean - Whether grid lines are shown across the chart
+        scaleShowGridLines: true,
+        //String - Colour of the grid lines
+        scaleGridLineColor: "rgba(0,0,0,.05)",
+        //Number - Width of the grid lines
+        scaleGridLineWidth: 1,
+        //Boolean - Whether to show horizontal lines (except X axis)
+        scaleShowHorizontalLines: true,
+        //Boolean - Whether to show vertical lines (except Y axis)
+        scaleShowVerticalLines: true,
+        //Boolean - If there is a stroke on each bar
+        barShowStroke: true,
+        //Number - Pixel width of the bar stroke
+        barStrokeWidth: 2,
+        //Number - Spacing between each of the X value sets
+        barValueSpacing: 5,
+        //Number - Spacing between data sets within X values
+        barDatasetSpacing: 1,
+        //String - A legend template
+        //Boolean - whether to make the chart responsive
+        responsive: true,
+        maintainAspectRatio: true
+      };
+  
+      barChartOptions.datasetFill = false;
+      barChart.Bar(barChartData, barChartOptions);
+    });
+  </script>
+  
+{% endblock %}

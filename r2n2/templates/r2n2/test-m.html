@@ -1,0 +1,508 @@
+{% extends 'r2n2/base-m.html' %}
+
+
+{% block content_header %}
+	<section class="content-header">
+	<h1> 
+		{{ lsgd_selected.0.lsgd_code }} -
+        {{ lsgd_selected.0.lsgd_name }} - 
+        {{ lsgd_selected.0.lsgd_type }} -
+		{{ data_entry_year }}
+    </h1>
+{% endblock %}
+
+
+	
+{% block content %}
+<section class="content">
+
+<!-- Left col -->
+<section class="col-lg-3 col-md-3">
+		
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-red">
+            <span class="info-box-icon">1</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">General Details of LSGD</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">2</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Demographic Particulars (2011) </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">3</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Sex Desegregated Data of Children</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">4</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Sex Wise Disability Data of Children </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">5</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Morbidity Status of Children </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">6</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Pregnancy Related Status</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">7</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Birth and Death Registration </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">8</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Nutritional and Health Status </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">9</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Early Chilhood Care and Education</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">10</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Institutions of Education</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">11</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Sex Desegregated Data of School Children</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">12</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Infrastructural Conditions of School</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">13</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Health Care Institutions</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">14</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Other  Institution for Children</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">15</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Infrastructural Conditions on PQLI</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">16</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Chidren Exposed to Vulnaribilities</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">17</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Child Participation</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">18</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Literary Cultural Centres</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+<div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+          <a href="#"> <div class="info-box bg-aqua">
+            <span class="info-box-icon">19</span>
+
+            <div class="info-box-content">
+              <span class="info-box-number">Child Friendly Administrative Initative</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div></a>
+</div>
+
+</section>
+<!-- Left Col -->
+
+
+			  
+<!-- Right col -->
+<section class="col-lg-9 col-md-9">
+
+<!-- Horizontal Form -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> General Details of LSGD</h3>
+			</div>
+            <!-- /.box-header -->
+            <!-- form start -->
+			<!-- {{ questions }} -->
+			
+			<form class="form-horizontal" method="post">
+			{% csrf_token %}
+            <div class="box-body">	
+			<table border=0px width=100%>
+	
+			<tr height=70px>
+			  <td>
+                  <label for="lsgd_name" class="col-sm-8">{{ questions.0.question_text }}</label>
+				  <input id="lsgd_name" name="lsgd_name" type="text" class="form-control" placeholder="{{ questions.0.question_text }}">
+			  </td>
+			  
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="lsgd_year_of_formation" class="col-sm-8">{{ questions.1.question_text }}</label>
+				  <input id="lsgd_year_of_formation" name="lsgd_year_of_formation" type="text" class="form-control" placeholder="{{ questions.1.question_text }}">
+			  </td>
+			</tr> 
+			
+			<tr height=70px>
+			  <td>
+                  <label for="lsgd_area_in_sqkm" class="col-sm-8">{{ questions.2.question_text }}</label>
+				  <input id="lsgd_area_in_sqkm" name="lsgd_area_in_sqkm" type="text" class="form-control" placeholder="{{ questions.2.question_text }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.3.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.3.question_text }}">
+			  </td>
+			</tr>
+			  
+			<tr height=70px>
+			  <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.4.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.4.question_text }}">
+			  </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			 			 
+			 <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.5.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.5.question_text }}">
+			  </td>
+			 </tr>
+			 
+			 <tr height=70px>
+			  <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.6.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.6.question_text }}">
+			  </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			 			 
+			 <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.7.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.7.question_text }}">
+			  </td>
+			 </tr>
+			
+			<tr height=70px>
+			  <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.8.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.8.question_text }}">
+			  </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			 			 
+			 <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.9.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.9.question_text }}">
+			  </td>
+			 </tr>
+			
+			<tr height=70px>
+			  <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.10.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.10.question_text }}">
+			  </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			 			 
+			 <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.11.question_text }}</label>
+				  <div class="entry input-group col-sm-12">
+                        <input class="form-control" name="fields[]" type="text" placeholder="{{ questions.11.question_text }}" />
+                    	<span class="input-group-btn">
+                            <button class="btn btn-success btn-add" type="button">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </span>
+                    </div>
+			  </td>
+			 </tr>
+			
+			<!-- Add more rows -->
+			
+			<!-- Add more rows -->
+
+			 
+			<tr height=70px>
+			  <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.12.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.12.question_text }}">
+			  </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			 			 
+			 <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.13.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.13.question_text }}">
+			  </td>
+			 </tr>
+			
+			<tr height=70px>
+			  <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.14.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.14.question_text }}">
+			  </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			 			 
+			 <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.15.question_text }}</label>
+				  <div class="entry input-group col-sm-12">
+                        <input class="form-control" name="fields1[]" type="text" placeholder="{{ questions.15.question_text }}" />
+                    	<span class="input-group-btn">
+                            <button class="btn btn-success btn-add" type="button">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </span>
+                    </div>
+			  </td>
+			 </tr>
+			
+			<tr height=70px>
+			  <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.16.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.16.question_text }}">
+			  </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			 			 
+			 
+			 </tr>
+			
+			<tr height=70px>
+			  <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.17.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.17.question_text }}">
+			  </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			 			 
+			 <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.18.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.18.question_text }}">
+			  </td>
+			 </tr>
+			
+			<tr height=70px>
+			  <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.19.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.19.question_text }}">
+			  </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			 			 
+                  <td>
+                  <label for="inputEmail3" class="col-sm-8">{{ questions.20.question_text }}</label>
+				  <input type="text" class="form-control" placeholder="{{ questions.20.question_text }}">
+			 
+			  </td>
+			 </tr>
+			
+			
+			
+
+              <!-- /.box-body -->
+
+			</table>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-info">Save Details</button>
+                <button type="submit" class="btn btn-info pull-right">Next Page </button>
+			    <button type="submit" style='margin-right:10px' class="btn btn-info pull-right">Prev Page </button>
+              </div>
+              <!-- /.box-footer -->
+		    </div>
+            </form>
+		
+          </div>
+          <!-- /.box -->
+</section>
+<!-- Right col -->
+
+
+</section>
+<!-- End of content -->
+{% endblock %}
+
+

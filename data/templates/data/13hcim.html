@@ -1,0 +1,784 @@
+{% extends 'r2n2/base.html' %}
+
+{% block userinfo %}
+<!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ current_user.first_name}} {{ current_user.last_name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  {{ current_user.first_name}} {{ current_user.last_name}} 
+                  <small>{{ current_user.email}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-info btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-danger btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+		  
+		  
+{% endblock %}
+
+
+{% block content_header %}
+	<section class="content-header">
+	<h1> 
+		{{ lsgd_selected.0.lsgd_code }} -
+        {{ lsgd_selected.0.lsgd_name }} - 
+        {{ lsgd_selected.0.lsgd_type }} -
+		{{ data_entry_year }}
+    </h1>
+	
+	<ol class="breadcrumb">
+        
+     </ol>
+    </section>	
+{% endblock %}
+
+
+
+	
+{% block content %}
+<section class="content">
+
+<!-- Left col -->
+<section class="col-lg-3 col-md-3">
+		
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/gdls/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">1</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">തദ്ദേശസ്വയംഭരണസ്ഥാപനത്തിന്‍റെ പൊതുവിവരങ്ങള്‍ </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/demp/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">2</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ജനസംഖ്യാ വിവരങ്ങള്‍ (2011) </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/sddc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">3</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികളുടെ ലിംഗം തിരിച്ചുള്ള കണക്കുകള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/swdd/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">4</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ഭിന്നശേഷിയുള്ള കുട്ടികളുടെ ലിംഗം തിരിച്ചുള്ള കണക്ക് </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/msc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">5</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികളുടെ രോഗാതുരത്വം സ്ഥിതിവിവരങ്ങള്‍ </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/prs/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">6</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ഗര്‍ഭധാരണവുമായി ബന്ധപ്പെട്ട വിവരങ്ങൾ </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/bdr/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">7</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number"> കുട്ടികളുടെ ജനനമരണ കണക്കുകള്‍   </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/nhs/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">8</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികളുടെ പോഷണാരോഗ്യനിലവാരം </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/ecce/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">9</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ശൈശവകാല പരിരക്ഷയും വിദ്യാഭ്യാസവും </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/ioe/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">10</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">വിദ്യാഭ്യാസ സ്ഥാപനങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/sddosc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">11</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">സ്കൂള്‍ കുട്ടികളുടെ ലിംഗംതിരിച്ചുള്ള കണക്ക്</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/icos/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">12</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">വിദ്യാലയ പശ്ചാത്തല അവസ്ഥ</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="#"> <div class="info-box bg-red-gradient">
+                <span class="info-box-icon">13</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ആരോഗ്യ സേവന സംവിധാനങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/oifc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">14</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികള്‍ക്കായുള്ള ഇതര സേവനസ്ഥാപനങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/icop/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">15</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ജീവിതഗുണമേന്മയുമായി   ബന്ധപ്പെട്ട പശ്ചാത്തലഅവസ്ഥ</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/cetv/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">16</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">അപായസാധ്യതയിലുള്‍പ്പെടുന്ന കുട്ടികളുടെ അവസ്ഥ</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/cp/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">17</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികള്‍ക്ക്  ലഭ്യമായ പങ്കാളിത്ത സംവിധാനങ്ങളും സൗകര്യങ്ങളും</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    <!-- ./row -->
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/lcc/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">18</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">കുട്ടികള്‍ക്ക് ലഭ്യമായ കല/സാംസ്ക്കാരിക സ്ഥാപനങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+              <a href="/data/cfai/"> <div class="info-box bg-blue-gradient">
+                <span class="info-box-icon">19</span>
+    
+                <div class="info-box-content">
+                  <span class="info-box-number">ബാല സൗഹൃദ ഭരണ സംരംഭങ്ങള്‍</span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div></a>
+    </div>
+    
+    </section>
+    <!-- Left Col -->
+			  
+<!-- Right col -->
+<section class="col-lg-9 col-md-9">
+
+<!-- Horizontal Form -->
+          <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Health Care Institutions ( ആരോഗ്യസേവനസംവിധാനങ്ങള്‍  )</h3>
+			</div>
+		
+			<div class="box-footer text-black">
+            <!-- /.box-header -->
+            <!-- form start -->
+			<!-- {{ questions }} -->
+			
+			<form class="form-horizontal" method="post">
+      {% csrf_token %}
+      
+          <div class="box-footer text-black">
+    <div class="box-body">	
+	  <div class="box box-solid bg-blue-gradient">
+        <div class="box-header with-border">
+          <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Primary Health Centres ( പ്രാഥമികാരോഗ്യകേന്ദ്രം )</h3>
+        </div>
+        <div class="box-footer text-black">
+         <div class="box-body">	
+            <table border=0px width=100%>
+                 <tr height=70px><td>
+                    <label for="PHC_Govt" class="col-sm-8">1. {{ questions.0.question_text_m }}</label>
+                    <input id="PHC_Govt" name="PHC_Govt" type="text" size="7" value="{{ answers.0.PHC_Govt}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="PHC_Private" class="col-sm-8">2. {{ questions.1.question_text_m }}</label>
+                    <input id="PHC_Private" name="PHC_Private" type="text" size="7" value="{{ answers.0.PHC_Private}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="PHC_OP" class="col-sm-8">3. {{ questions.2.question_text_m }}</label>
+                    <input id="PHC_OP" name="PHC_OP" type="text" size="7" value="{{ answers.0.PHC_OP}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="PHC_IP" class="col-sm-8">4. {{ questions.3.question_text_m }}</label>
+                    <input id="PHC_IP" name="PHC_IP" type="text" size="7" value="{{ answers.0.PHC_IP}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="PHC_Labour" class="col-sm-8">5. {{ questions.4.question_text_m }}</label>
+                    <input id="PHC_Labour" name="PHC_Labour" type="text" size="7" value="{{ answers.0.PHC_Labour}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="PHC_Infant_Treatment" class="col-sm-8">6. {{ questions.5.question_text_m }}</label>
+                    <input id="PHC_Infant_Treatment" name="PHC_Infant_Treatment" type="text" size="7" value="{{ answers.0.PHC_Infant_Treatment}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="PHC_Operation" class="col-sm-8">7. {{ questions.6.question_text_m }}</label>
+                    <input id="PHC_Operation" name="PHC_Operation" type="text" size="7" value="{{ answers.0.PHC_Operation}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+                </tr></table>
+                <div class="box-footer">
+                </div>
+                </div>
+             </div>
+             </div>
+             <div class="box box-solid bg-blue-gradient">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Dispensary ( ഡിസ്പെൻസറി )</h3>
+                </div>
+            <div class="box-footer text-black">
+            <div class="box-body">	
+            <table border=0px width=100%>
+           
+                    <tr height=70px><td>
+                    <label for="Dispensary_Govt" class="col-sm-8">8. {{ questions.7.question_text_m }}</label>
+                    <input id="Dispensary_Govt" name="Dispensary_Govt" type="text" size="7" value="{{ answers.0.Dispensary_Govt}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Dispensary_Private" class="col-sm-8">9. {{ questions.8.question_text_m }}</label>
+                    <input id="Dispensary_Private" name="Dispensary_Private" type="text" size="7" value="{{ answers.0.Dispensary_Private}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Dispensary_OP" class="col-sm-8">10. {{ questions.9.question_text_m }}</label>
+                    <input id="Dispensary_OP" name="Dispensary_OP" type="text" size="7" value="{{ answers.0.Dispensary_OP}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Dispensary_IP" class="col-sm-8">11. {{ questions.10.question_text_m }}</label>
+                    <input id="Dispensary_IP" name="Dispensary_IP" type="text" size="7" value="{{ answers.0.Dispensary_IP}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Dispensary_Labour" class="col-sm-8">12. {{ questions.11.question_text_m }}</label>
+                    <input id="Dispensary_Labour" name="Dispensary_Labour" type="text" size="7" value="{{ answers.0.Dispensary_Labour}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Dispensary_Infant_Treatment" class="col-sm-8">12. {{ questions.13.question_text_m }}</label>
+                    <input id="Dispensary_Infant_Treatment" name="Dispensary_Infant_Treatment" type="text" size="7" value="{{ answers.0.Dispensary_Infant_Treatment}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Dispensary_Operation" class="col-sm-8">14. {{ questions.13.question_text_m }}</label>
+                    <input id="Dispensary_Operation" name="Dispensary_Operation" type="text" size="7" value="{{ answers.0.Dispensary_Operation}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+                </tr></table>
+                <div class="box-footer">
+                </div>
+                </div>
+             </div>
+             </div>
+             <div class="box box-solid bg-blue-gradient">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Hospitals ( ആശുപത്രി )</h3>
+                </div>
+            <div class="box-footer text-black">
+            <div class="box-body">	
+            <table border=0px width=100%>
+ 
+                    <tr height=70px><td>
+                    <label for="Hospital_Govt" class="col-sm-8">15. {{ questions.14.question_text_m }}</label>
+                    <input id="Hospital_Govt" name="Hospital_Govt" type="text" size="7" value="{{ answers.0.Hospital_Govt}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Hospital_Private" class="col-sm-8">16. {{ questions.15.question_text_m }}</label>
+                    <input id="Hospital_Private" name="Hospital_Private" type="text" size="7" value="{{ answers.0.Hospital_Private}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Hospital_OP" class="col-sm-8">17. {{ questions.16.question_text_m }}</label>
+                    <input id="Hospital_OP" name="Hospital_OP" type="text" size="7" value="{{ answers.0.Hospital_OP}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Hospital_IP" class="col-sm-8">18. {{ questions.17.question_text_m }}</label>
+                    <input id="Hospital_IP" name="Hospital_IP" type="text" size="7" value="{{ answers.0.Hospital_IP}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Hospital_Labour" class="col-sm-8">19. {{ questions.18.question_text_m }}</label>
+                    <input id="Hospital_Labour" name="Hospital_Labour" type="text" size="7" value="{{ answers.0.Hospital_Labour}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Hospital_Infant_Treatment" class="col-sm-8">19. {{ questions.20.question_text_m }}</label>
+                    <input id="Hospital_Infant_Treatment" name="Hospital_Infant_Treatment" type="text" size="7" value="{{ answers.0.Hospital_Infant_Treatment}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Hospital_Operation" class="col-sm-8">21. {{ questions.20.question_text_m }}</label>
+                    <input id="Hospital_Operation" name="Hospital_Operation" type="text" size="7" value="{{ answers.0.Hospital_Operation}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+                    
+                </tr></table>
+                <div class="box-footer">
+                </div>
+                </div>
+             </div>
+             </div>
+             <div class="box box-solid bg-blue-gradient">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Jilla Hospital ( ജില്ല ആശുപത്രി )</h3>
+                </div>
+            <div class="box-footer text-black">
+            <div class="box-body">	
+            <table border=0px width=100%>
+ 
+                    <tr height=70px><td>
+                    <label for="Jilla_Hospital_Govt" class="col-sm-8">22. {{ questions.21.question_text_m }}</label>
+                    <input id="Jilla_Hospital_Govt" name="Jilla_Hospital_Govt" type="text" size="7" value="{{ answers.0.Jilla_Hospital_Govt}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Jilla_Hospital_Private" class="col-sm-8">23. {{ questions.22.question_text_m }}</label>
+                    <input id="Jilla_Hospital_Private" name="Jilla_Hospital_Private" type="text" size="7" value="{{ answers.0.Jilla_Hospital_Private}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Jilla_Hospital_OP" class="col-sm-8">24. {{ questions.23.question_text_m }}</label>
+                    <input id="Jilla_Hospital_OP" name="Jilla_Hospital_OP" type="text" size="7" value="{{ answers.0.Jilla_Hospital_OP}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Jilla_Hospital_IP" class="col-sm-8">25. {{ questions.24.question_text_m }}</label>
+                    <input id="Jilla_Hospital_IP" name="Jilla_Hospital_IP" type="text" size="7" value="{{ answers.0.Jilla_Hospital_IP}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Jilla_Hospital_Labour" class="col-sm-8">26. {{ questions.25.question_text_m }}</label>
+                    <input id="Jilla_Hospital_Labour" name="Jilla_Hospital_Labour" type="text" size="7" value="{{ answers.0.Jilla_Hospital_Labour}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Jilla_Hospital_Infant_Treatment" class="col-sm-8">26. {{ questions.27.question_text_m }}</label>
+                    <input id="Jilla_Hospital_Infant_Treatment" name="Jilla_Hospital_Infant_Treatment" type="text" size="7" value="{{ answers.0.Jilla_Hospital_Infant_Treatment}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Jilla_Hospital_Operation" class="col-sm-8">28. {{ questions.27.question_text_m }}</label>
+                    <input id="Jilla_Hospital_Operation" name="Jilla_Hospital_Operation" type="text" size="7" value="{{ answers.0.Jilla_Hospital_Operation}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+                </tr></table>
+ 
+                <div class="box-footer">
+                </div>
+                </div>
+             </div>
+             </div>
+             <div class="box box-solid bg-blue-gradient">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; General Hospital ( ജനറല്‍ ആശുപത്രി  )</h3>
+                </div>
+            <div class="box-footer text-black">
+            <div class="box-body">	
+ 
+                <table border=0px width=100%>
+                    <tr height=70px><td>
+                    <label for="General_Hospital_Govt" class="col-sm-8">29. {{ questions.28.question_text_m }}</label>
+                    <input id="General_Hospital_Govt" name="General_Hospital_Govt" type="text" size="7" value="{{ answers.0.General_Hospital_Govt}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="General_Hospital_Private" class="col-sm-8">29. {{ questions.30.question_text_m }}</label>
+                    <input id="General_Hospital_Private" name="General_Hospital_Private" type="text" size="7" value="{{ answers.0.General_Hospital_Private}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="General_Hospital_OP" class="col-sm-8">31. {{ questions.30.question_text_m }}</label>
+                    <input id="General_Hospital_OP" name="General_Hospital_OP" type="text" size="7" value="{{ answers.0.General_Hospital_OP}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="General_Hospital_IP" class="col-sm-8">32. {{ questions.31.question_text_m }}</label>
+                    <input id="General_Hospital_IP" name="General_Hospital_IP" type="text" size="7" value="{{ answers.0.General_Hospital_IP}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="General_Hospital_Labour" class="col-sm-8">33. {{ questions.32.question_text_m }}</label>
+                    <input id="General_Hospital_Labour" name="General_Hospital_Labour" type="text" size="7" value="{{ answers.0.General_Hospital_Labour}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="General_Hospital_Infant_Treatment" class="col-sm-8">33. {{ questions.34.question_text_m }}</label>
+                    <input id="General_Hospital_Infant_Treatment" name="General_Hospital_Infant_Treatment" type="text" size="7" value="{{ answers.0.General_Hospital_Infant_Treatment}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="General_Hospital_Operation" class="col-sm-8">35. {{ questions.34.question_text_m }}</label>
+                    <input id="General_Hospital_Operation" name="General_Hospital_Operation" type="text" size="7" value="{{ answers.0.General_Hospital_Operation}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+                </tr></table>
+                <div class="box-footer">
+                </div>
+                </div>
+             </div>
+             </div>
+             <div class="box box-solid bg-blue-gradient">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Alopathy Clinics ( അലോപതി ക്ലിനിക്ക്  )</h3>
+                </div>
+            <div class="box-footer text-black">
+            <div class="box-body">	
+            <table border=0px width=100%>
+                     
+
+                    <tr height=70px><td>
+                    <label for="Alopathy_Clinic_Govt" class="col-sm-8">36. {{ questions.35.question_text_m }}</label>
+                    <input id="Alopathy_Clinic_Govt" name="Alopathy_Clinic_Govt" type="text" size="7" value="{{ answers.0.Alopathy_Clinic_Govt}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Alopathy_Clinic_Private" class="col-sm-8">37. {{ questions.36.question_text_m }}</label>
+                    <input id="Alopathy_Clinic_Private" name="Alopathy_Clinic_Private" type="text" size="7" value="{{ answers.0.Alopathy_Clinic_Private}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Alopathy_Clinic_OP" class="col-sm-8">38. {{ questions.37.question_text_m }}</label>
+                    <input id="Alopathy_Clinic_OP" name="Alopathy_Clinic_OP" type="text" size="7" value="{{ answers.0.Alopathy_Clinic_OP}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Alopathy_Clinic_IP" class="col-sm-8">39. {{ questions.38.question_text_m }}</label>
+                    <input id="Alopathy_Clinic_IP" name="Alopathy_Clinic_IP" type="text" size="7" value="{{ answers.0.Alopathy_Clinic_IP}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Alopathy_Clinic_Labour" class="col-sm-8">40. {{ questions.39.question_text_m }}</label>
+                    <input id="Alopathy_Clinic_Labour" name="Alopathy_Clinic_Labour" type="text" size="7" value="{{ answers.0.Alopathy_Clinic_Labour}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Alopathy_Clinic_Infant_Treatment" class="col-sm-8">40. {{ questions.41.question_text_m }}</label>
+                    <input id="Alopathy_Clinic_Infant_Treatment" name="Alopathy_Clinic_Infant_Treatment" type="text" size="7" value="{{ answers.0.Alopathy_Clinic_Infant_Treatment}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Alopathy_Clinic_Operation" class="col-sm-8">42. {{ questions.41.question_text_m }}</label>
+                    <input id="Alopathy_Clinic_Operation" name="Alopathy_Clinic_Operation" type="text" size="7" value="{{ answers.0.Alopathy_Clinic_Operation}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+                </tr></table>
+                <div class="box-footer">
+                </div>
+                </div>
+             </div>
+             </div>
+             <div class="box box-solid bg-blue-gradient">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Ayurdevam ( ആയൂര്‍വേദം )</h3>
+                </div>
+            <div class="box-footer text-black">
+            <div class="box-body">	
+            <table border=0px width=100%>
+                     
+                    <tr height=70px><td>
+                    <label for="Ayurvedam_Govt" class="col-sm-8">43. {{ questions.42.question_text_m }}</label>
+                    <input id="Ayurvedam_Govt" name="Ayurvedam_Govt" type="text" size="7" value="{{ answers.0.Ayurvedam_Govt}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Ayurvedam_Private" class="col-sm-8">44. {{ questions.43.question_text_m }}</label>
+                    <input id="Ayurvedam_Private" name="Ayurvedam_Private" type="text" size="7" value="{{ answers.0.Ayurvedam_Private}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Ayurvedam_OP" class="col-sm-8">45. {{ questions.44.question_text_m }}</label>
+                    <input id="Ayurvedam_OP" name="Ayurvedam_OP" type="text" size="7" value="{{ answers.0.Ayurvedam_OP}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Ayurvedam_IP" class="col-sm-8">46. {{ questions.45.question_text_m }}</label>
+                    <input id="Ayurvedam_IP" name="Ayurvedam_IP" type="text" size="7" value="{{ answers.0.Ayurvedam_IP}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Ayurvedam_Labour" class="col-sm-8">47. {{ questions.46.question_text_m }}</label>
+                    <input id="Ayurvedam_Labour" name="Ayurvedam_Labour" type="text" size="7" value="{{ answers.0.Ayurvedam_Labour}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Ayurvedam_Infant_Treatment" class="col-sm-8">48. {{ questions.47.question_text_m }}</label>
+                    <input id="Ayurvedam_Infant_Treatment" name="Ayurvedam_Infant_Treatment" type="text" size="7" value="{{ answers.0.Ayurvedam_Infant_Treatment}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Ayurvedam_Operation" class="col-sm-8">49. {{ questions.48.question_text_m }}</label>
+                    <input id="Ayurvedam_Operation" name="Ayurvedam_Operation" type="text" size="7" value="{{ answers.0.Ayurvedam_Operation}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+                </tr></table>
+                <div class="box-footer">
+                </div>
+                </div>
+             </div>
+             </div>
+             <div class="box box-solid bg-blue-gradient">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Homeopathy ( ഹോമിയോപതി )</h3>
+                </div>
+            <div class="box-footer text-black">
+            <div class="box-body">	
+            <table border=0px width=100%>
+                     
+                    <tr height=70px><td>
+                    <label for="Homeo_Govt" class="col-sm-8">50. {{ questions.49.question_text_m }}</label>
+                    <input id="Homeo_Govt" name="Homeo_Govt" type="text" size="7" value="{{ answers.0.Homeo_Govt}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Homeo_Private" class="col-sm-8">51. {{ questions.50.question_text_m }}</label>
+                    <input id="Homeo_Private" name="Homeo_Private" type="text" size="7" value="{{ answers.0.Homeo_Private}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Homeo_OP" class="col-sm-8">52. {{ questions.51.question_text_m }}</label>
+                    <input id="Homeo_OP" name="Homeo_OP" type="text" size="7" value="{{ answers.0.Homeo_OP}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Homeo_IP" class="col-sm-8">53. {{ questions.52.question_text_m }}</label>
+                    <input id="Homeo_IP" name="Homeo_IP" type="text" size="7" value="{{ answers.0.Homeo_IP}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Homeo_Labour" class="col-sm-8">54. {{ questions.53.question_text_m }}</label>
+                    <input id="Homeo_Labour" name="Homeo_Labour" type="text" size="7" value="{{ answers.0.Homeo_Labour}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Homeo_Infant_Treatment" class="col-sm-8">55. {{ questions.54.question_text_m }}</label>
+                    <input id="Homeo_Infant_Treatment" name="Homeo_Infant_Treatment" type="text" size="7" value="{{ answers.0.Homeo_Infant_Treatment}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Homeo_Operation" class="col-sm-8">56. {{ questions.55.question_text_m }}</label>
+                    <input id="Homeo_Operation" name="Homeo_Operation" type="text" size="7" value="{{ answers.0.Homeo_Operation}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+                </tr></table>
+                <div class="box-footer">
+                </div>
+                </div>
+             </div>
+             </div>
+             <div class="box box-solid bg-blue-gradient">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Aayush Centres ( ആയുഷ് കേന്ദ്രങ്ങള്‍ )</h3>
+                </div>
+            <div class="box-footer text-black">
+            <div class="box-body">	
+            <table border=0px width=100%>
+                     
+                    <tr height=70px><td>
+                    <label for="Other_Ayush_Centers_Govt" class="col-sm-8">57. {{ questions.56.question_text_m }}</label>
+                    <input id="Other_Ayush_Centers_Govt" name="Other_Ayush_Centers_Govt" type="text" size="7" value="{{ answers.0.Other_Ayush_Centers_Govt}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Other_Ayush_Centers_Private" class="col-sm-8">58. {{ questions.57.question_text_m }}</label>
+                    <input id="Other_Ayush_Centers_Private" name="Other_Ayush_Centers_Private" type="text" size="7" value="{{ answers.0.Other_Ayush_Centers_Private}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Other_Ayush_Centers_OP" class="col-sm-8">59. {{ questions.58.question_text_m }}</label>
+                    <input id="Other_Ayush_Centers_OP" name="Other_Ayush_Centers_OP" type="text" size="7" value="{{ answers.0.Other_Ayush_Centers_OP}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Other_Ayush_Centers_IP" class="col-sm-8">60. {{ questions.59.question_text_m }}</label>
+                    <input id="Other_Ayush_Centers_IP" name="Other_Ayush_Centers_IP" type="text" size="7" value="{{ answers.0.Other_Ayush_Centers_IP}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Other_Ayush_Centers_Labour" class="col-sm-8">61. {{ questions.60.question_text_m }}</label>
+                    <input id="Other_Ayush_Centers_Labour" name="Other_Ayush_Centers_Labour" type="text" size="7" value="{{ answers.0.Other_Ayush_Centers_Labour}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="Other_Ayush_Centers_Infant_Treatment" class="col-sm-8">62. {{ questions.61.question_text_m }}</label>
+                    <input id="Other_Ayush_Centers_Infant_Treatment" name="Other_Ayush_Centers_Infant_Treatment" type="text" size="7" value="{{ answers.0.Other_Ayush_Centers_Infant_Treatment}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="Other_Ayush_Centers_Operation" class="col-sm-8">63. {{ questions.62.question_text_m }}</label>
+                    <input id="Other_Ayush_Centers_Operation" name="Other_Ayush_Centers_Operation" type="text" size="7" value="{{ answers.0.Other_Ayush_Centers_Operation}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td align="right"><button type="submit" name="save_details" class="btn btn-primary">Save</button></td>
+                </tr></table>
+                <div class="box-footer">
+                </div>
+                </div>
+             </div>
+             </div>
+             <div class="box box-solid bg-blue-gradient">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Mother & Child Centres ( മാതൃശിശു സബ്-സെന്‍ററുകൾ )</h3>
+                </div>
+            <div class="box-footer text-black">
+            <div class="box-body">	
+            <table border=0px width=100%>
+                     
+                    <tr height=70px><td>
+                    <label for="MCH_Govt" class="col-sm-8">64. {{ questions.63.question_text_m }}</label>
+                    <input id="MCH_Govt" name="MCH_Govt" type="text" size="7" value="{{ answers.0.MCH_Govt}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="MCH_Private" class="col-sm-8">65. {{ questions.64.question_text_m }}</label>
+                    <input id="MCH_Private" name="MCH_Private" type="text" size="7" value="{{ answers.0.MCH_Private}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="MCH_OP" class="col-sm-8">66. {{ questions.67.question_text_m }}</label>
+                    <input id="MCH_OP" name="MCH_OP" type="text" size="7" value="{{ answers.0.MCH_OP}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="MCH_IP" class="col-sm-8">67. {{ questions.68.question_text_m }}</label>
+                    <input id="MCH_IP" name="MCH_IP" type="text" size="7" value="{{ answers.0.MCH_IP}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="MCH_Labour" class="col-sm-8">68. {{ questions.67.question_text_m }}</label>
+                    <input id="MCH_Labour" name="MCH_Labour" type="text" size="7" value="{{ answers.0.MCH_Labour}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                    <td><label for="MCH_Infant_Treatment" class="col-sm-8">69. {{ questions.68.question_text_m }}</label>
+                    <input id="MCH_Infant_Treatment" name="MCH_Infant_Treatment" type="text" size="7" value="{{ answers.0.MCH_Infant_Treatment}}"></td></td></tr>
+            
+                    <tr height=70px><td>
+                    <label for="MCH_Operation" class="col-sm-8">70. {{ questions.69.question_text_m }}</label>
+                    <input id="MCH_Operation" name="MCH_Operation" type="text" size="7" value="{{ answers.0.MCH_Operation}}"></td>
+                    <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+                                
+                </table>           
+
+      <!-- /.box-body -->
+
+		
+      <div class="box-footer">
+        <button type="submit" name="save_details" class="btn btn-primary">സംരക്ഷിക്കുക </button>
+        <button type="submit" name="next_page" class="btn btn-primary pull-right">മുന്നോട്ട്  </button>
+              <button type="submit" name="prev_page" style='margin-right:10px' class="btn btn-primary pull-right">പിന്നോട്ട്  </button>
+      </div>
+      <!-- /.box-footer -->
+    </div>
+            </form>
+		
+          </div>
+		  </div>
+		  
+          <!-- /.box -->
+</section>
+<!-- Right col -->
+
+
+</section>
+<!-- End of content -->
+{% endblock %}
+
+

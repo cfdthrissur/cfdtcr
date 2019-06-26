@@ -1,0 +1,201 @@
+{% extends 'r2n2/base.html' %}
+
+{% block userinfo %}
+<!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ current_user.first_name}} {{ current_user.last_name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  {{ current_user.first_name}} {{ current_user.last_name}} 
+                  <small>{{ current_user.email}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-info btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-danger btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+		  
+		  
+		 
+{% endblock %}
+
+{% block content %}
+<section class="content">
+		
+	<div class="box box-solid bg-blue-gradient">
+        <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp;Mortality Statistics  - Select LSGD  </h3>
+			</div>
+
+		<div class="box-footer text-black">
+            <div class="box-body">	
+			<table border=0px width=100%>
+	
+			<tr height=40px>
+			  <td width="35%">
+                  <label for="lsgd_name">Name of LSGD</label>
+				  <form method="POST">  		{% csrf_token %}
+					<select name ="lsgd_selected" class="form-control"> {% for l in lsgds %} <option value={{ l.lsgd_code }} {% if l.lsgd_code == lsgd_selected %} selected {% endif %}>{{ l.lsgd_name }}  {{ l.lsgd_type}}  {% endfor %} </select>
+			  </td>
+			  
+			  <td width="5%"> <label for="inputEmail3"></label> </td>
+			  
+			  <td width="40%">
+                  
+					
+			  </td>
+			   <td width="3%"> <label for="inputEmail3"></label> </td>
+
+			  <td width="20%">
+                <label for="lsgd_year_of_formation"></label>
+				<input type="submit" class="form-control btn btn-primary" value="Show"> </form>
+			  </td>
+			</tr> 			
+			<!-- /.box-body -->
+
+			</table>
+		    </div>
+          </div>
+		 </div>
+		 
+<div class="box box-solid bg-blue-gradient">
+  <div class="box-header">
+    <h3 class="box-title">Mortality Statistics - </h3>
+    <h3 class="box-title">Local Body : {{ current_lsgd.0 }}, Block : {{ blocks.0.block_name }}</h3>
+  </div>
+  <!-- /.box-header -->
+ 
+ <div class="box-footer text-black">
+  <div class="box-body">
+
+    <table id="lsgd_data" class="table table-bordered table-striped table-hover" cellspacing="0" width="100%">
+          
+		  <thead> <tr> <th>Local Body</th><th>Live Birth</th><th>New Born</th><th>Infant</th><th>Child</th></tr> </thead>
+
+          <tbody>
+  
+            <tr> <td>{{ current_lsgd.0 }}</td><td>{{lsgd_data.0}}</td><td>{{lsgd_data.1}}</td><td>{{lsgd_data.2}}</td><td>{{lsgd_data.3}}</td></tr>
+            <tr> <td>{{ blocks.0.block_name }}</td><td>{{block_data.0}}</td><td>{{block_data.1}}</td><td>{{block_data.2}}</td><td>{{block_data.3}}</td></tr>
+             <tr><td colspan=5><canvas id="lineChart" style="height:230px width=200px"></canvas></td></tr>
+          </tbody>
+        </table>
+  </div>
+  <!-- /.box-body -->
+  </div>
+</div>
+<!-- /.box -->
+
+
+
+
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+  $(function () {
+    /* ChartJS
+     * -------
+     * Here we will create a few charts using ChartJS
+     */
+
+    //--------------
+    //- AREA CHART -
+    //--------------
+
+
+    var areaChartData = {
+      labels: ["Live Birth", "New Born", "Infant","Child"],
+      datasets: [
+        {
+          label: "LSGD",
+          fillColor: "rgba(0, 0, 222, 100)",
+          strokeColor: "rgba(210, 214, 222, 100)",
+          pointColor: "rgba(210, 214, 222, 100)",
+          pointStrokeColor: "#c1c7d1",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(220,220,220,1)",
+          data: [{{lsgd_data.0}},{{lsgd_data.1}},{{lsgd_data.2}},{{lsgd_data.3}}]
+        },
+        {
+          label: "Block",
+          fillColor: "rgba(60,141,188,0.9)",
+          strokeColor: "rgba(60,141,188,0.8)",
+          pointColor: "#3b8bba",
+          pointStrokeColor: "rgba(60,141,188,1)",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(60,141,188,1)",
+          data: [{{block_data.0}},{{block_data.1}},{{block_data.2}},{{block_data.3}}]
+        }
+      ]
+    };
+
+    var areaChartOptions = {
+      //Boolean - If we should show the scale at all
+      showScale: true,
+      //Boolean - Whether grid lines are shown across the chart
+      scaleShowGridLines: false,
+      //String - Colour of the grid lines
+      scaleGridLineColor: "rgba(0,0,0,.05)",
+      //Number - Width of the grid lines
+      scaleGridLineWidth: 1,
+      //Boolean - Whether to show horizontal lines (except X axis)
+      scaleShowHorizontalLines: true,
+      //Boolean - Whether to show vertical lines (except Y axis)
+      scaleShowVerticalLines: true,
+      //Boolean - Whether the line is curved between points
+      bezierCurve: true,
+      //Number - Tension of the bezier curve between points
+      bezierCurveTension: 0.3,
+      //Boolean - Whether to show a dot for each point
+      pointDot: false,
+      //Number - Radius of each point dot in pixels
+      pointDotRadius: 4,
+      //Number - Pixel width of point dot stroke
+      pointDotStrokeWidth: 1,
+      //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+      pointHitDetectionRadius: 20,
+      //Boolean - Whether to show a stroke for datasets
+      datasetStroke: true,
+      //Number - Pixel width of dataset stroke
+      datasetStrokeWidth: 2,
+      //Boolean - Whether to fill the dataset with a color
+      datasetFill: true,
+      //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+      maintainAspectRatio: true,
+      //Boolean - whether to make the chart responsive to window resizing
+      responsive: true
+    };
+
+    //Create the line chart
+    //areaChart.Line(areaChartData, areaChartOptions);
+
+    //-------------
+    //- LINE CHART -
+    //--------------
+    var lineChartCanvas = $("#lineChart").get(0).getContext("2d");
+    var lineChart = new Chart(lineChartCanvas);
+    var lineChartOptions = areaChartOptions;
+    lineChartOptions.datasetFill = false;
+    lineChart.Line(areaChartData, lineChartOptions);
+
+  });
+</script>
+
+{% endblock %}

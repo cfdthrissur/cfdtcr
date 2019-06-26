@@ -1,0 +1,588 @@
+{% extends 'r2n2/base.html' %}
+
+{% block userinfo %}
+<!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ current_user.first_name}} {{ current_user.last_name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  {{ current_user.first_name}} {{ current_user.last_name}} 
+                  <small>{{ current_user.email}}</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-info btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-danger btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+		  
+		  
+{% endblock %}
+
+
+{% block content_header %}
+	<section class="content-header">
+	<h1> 
+		{{ lsgd_selected.0.lsgd_code }} -
+        {{ lsgd_selected.0.lsgd_name }} - 
+        {{ lsgd_selected.0.lsgd_type }} -
+		{{ data_entry_year }}
+    </h1>
+	
+	<ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> ENGLISH</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> മലയാളം </a></li>
+     </ol>
+    </section>	
+{% endblock %}
+
+
+
+	
+{% block content %}
+<section class="content">
+
+<!-- Left col -->
+<section class="col-lg-3 col-md-3">
+  <div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/gdls/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">1</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">General Details of LSGD </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/demp/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">2</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Demographic Particulars (2011) </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/sddc/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">3</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Sex Desegregated Data of Children</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href=""> <div class="info-box bg-red-gradient">
+        <span class="info-box-icon">4</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Sex Wise Disability Data of Children </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/msc/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">5</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Morbidity Status of Children </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/prs/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">6</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Pregnancy Related Status</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/bdr/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">7</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Birth and Death Registration </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/nhs/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">8</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Nutritional and Health Status </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/ecce/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">9</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Early Chilhood Care and Education</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/ioe/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">10</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Institutions of Education</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/sddosc/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">11</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Sex Desegregated Data of School Children</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/icos/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">12</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Infrastructural Conditions of School</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/hci/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">13</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Health Care Institutions</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/oifc/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">14</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Other  Institution for Children</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/icop/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">15</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Infrastructural Conditions on PQLI</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/cetv/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">16</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Chidren Exposed to Vulnaribilities</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/cp/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">17</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Child Participation</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+<!-- ./row -->
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/lcc/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">18</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Literary Cultural Centres</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-6 col-xs-12">
+      <a href="/data/cfai/"> <div class="info-box bg-blue-gradient">
+        <span class="info-box-icon">19</span>
+
+        <div class="info-box-content">
+          <span class="info-box-number">Child Friendly Administrative Initative</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div></a>
+</div>
+
+</section>
+<!-- Left Col -->
+
+
+			  
+<!-- Right col -->
+<section class="col-lg-9 col-md-9">
+
+<!-- Horizontal Form -->
+          <div class="box box-solid bg-blue-gradient">
+            <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp;Sex Wise Disability Data of Children (   )</h3>
+			</div>
+		
+			<div class="box-footer text-black">
+            <!-- /.box-header -->
+            <!-- form start -->
+			<!-- {{ questions }} -->
+			
+			<form class="form-horizontal" method="post">
+      {% csrf_token %}
+      
+      <div class="box box-solid bg-blue-gradient">
+        <div class="box-header with-border">
+          <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Disability Details </h3>
+      </div>
+      <div class="box-footer text-black">
+      <div class="box-body">	
+			<table border=0px width=100%>
+	
+			<tr height=70px>
+			  <td>
+          <label for="Total_disabled_M" class="col-sm-8">1. {{ questions.0.question_text }}</label>
+				  <input id="Total_disabled_M" name="Total_disabled_M" type="text" size="7" value="{{ answers.0.Total_disabled_M }}">
+			  </td>
+			  
+        <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+        
+			  <td>
+                  <label for="Total_disabled_F" class="col-sm-8">2. {{ questions.1.question_text }}</label>
+				  <input id="Total_disabled_F" name="Total_disabled_F" type="text" size="7" value="{{ answers.0.Total_disabled_F }}">
+			  </td>
+			</tr> 
+			
+			<tr height=70px>
+			  <td>
+                  <label for="Locomotrs_M" class="col-sm-8">3. {{ questions.2.question_text }}</label>
+				  <input id="Locomotrs_M" name="Locomotrs_M" type="text" size="7" value="{{ answers.0.Locomotrs_M }}">
+              </td>
+              
+              <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+        
+			  <td>
+                  <label for="Locomotrs_F" class="col-sm-8">4. {{ questions.3.question_text }}</label>
+				  <input id="Locomotrs_F" name="Locomotrs_F" type="text" size="7" value="{{ answers.0.Locomotrs_F  }}">
+			  </td>
+			</tr>
+      
+      <tr height=70px>
+			  <td>
+          <label for="Visual_dis_M" class="col-sm-8">{{ questions.4.question_text }}</label>
+				  <input id="Visual_dis_M" name="Visual_dis_M" type="text" size="7" value="{{ answers.0.Visual_dis_M }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="Visual_dis_F" class="col-sm-8">{{ questions.5.question_text }}</label>
+				  <input id="Visual_dis_F" name="Visual_dis_F" type="text" size="7" value="{{ answers.0.Visual_dis_F }}">
+			  </td>
+      </tr>
+      
+      <tr height=70px>
+			  <td>
+          <label for="Hearing_dis_M" class="col-sm-8">{{ questions.6.question_text }}</label>
+				  <input id="Hearing_dis_M" name="Hearing_dis_M" type="text" size="7" value="{{ answers.0.Hearing_dis_M }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="Hearing_dis_F" class="col-sm-8">{{ questions.7.question_text }}</label>
+				  <input id="Hearing_dis_F" name="Hearing_dis_F" type="text" size="7" value="{{ answers.0.Hearing_dis_F }}">
+			  </td>
+      </tr>
+      
+      <tr height=70px>
+			  <td>
+                  <label for="MR_M" class="col-sm-8">{{ questions.8.question_text }}</label>
+				  <input id="MR_M" name="MR_M" type="text" size="7" value="{{ answers.0.MR_M }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="MR_F" class="col-sm-8">{{ questions.9.question_text }}</label>
+				  <input id="MR_F" name="MR_F" type="text" size="7" value="{{ answers.0.MR_F }}">
+			  </td>
+      </tr>
+      
+      <tr height=70px>
+			  <td>
+                  <label for="Auttisam_M" class="col-sm-8">{{ questions.10.question_text }}</label>
+				  <input id="Auttisam_M" name="Auttisam_M" type="text" size="7" value="{{ answers.0.Auttisam_M }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="Auttisam_F" class="col-sm-8">{{ questions.11.question_text }}</label>
+				  <input id="Auttisam_F" name="Auttisam_F" type="text" size="7" value="{{ answers.0.Auttisam_F }}">
+			  </td>
+      </tr>
+      
+      <tr height=70px>
+			  <td>
+                  <label for="Ceribral_Palsy_M" class="col-sm-8">{{ questions.12.question_text }}</label>
+				  <input id="Ceribral_Palsy_M" name="Ceribral_Palsy_M" type="text" size="7" value="{{ answers.0.Ceribral_Palsy_M }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="Ceribral_Palsy_F" class="col-sm-8">{{ questions.13.question_text }}</label>
+				  <input id="Ceribral_Palsy_F" name="Ceribral_Palsy_F" type="text" size="7" value="{{ answers.0.Ceribral_Palsy_F }}">
+			  </td>
+      </tr>
+
+      <tr height=70px>
+			  <td>
+                  <label for="Multiple_Disability_M" class="col-sm-8">{{ questions.14.question_text }}</label>
+				  <input id="Multiple_Disability_M" name="Multiple_Disability_M" type="text" size="7" value="{{ answers.0.Multiple_Disability_M }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="Multiple_Disability_F" class="col-sm-8">{{ questions.15.question_text }}</label>
+				  <input id="Multiple_Disability_F" name="Multiple_Disability_F" type="text" size="7" value="{{ answers.0.Multiple_Disability_F }}">
+			  </td>
+      </tr>
+
+      <tr height=70px>
+			  <td>
+                  <label for="Mentally_Ill_M" class="col-sm-8">{{ questions.16.question_text }}</label>
+				  <input id="Mentally_Ill_M" name="Mentally_Ill_M" type="text" size="7" value="{{ answers.0.Mentally_Ill_M }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="Mentally_Ill_F" class="col-sm-8">{{ questions.17.question_text }}</label>
+				  <input id="Mentally_Ill_F" name="Mentally_Ill_F" type="text" size="7" value="{{ answers.0.Mentally_Ill_F }}">
+			  </td>
+      </tr>
+
+      <tr height=70px>
+			  <td>
+                  <label for="Others_Disability_M" class="col-sm-8">{{ questions.18.question_text }}</label>
+				  <input id="Others_Disability_M" name="Others_Disability_M" type="text" size="7" value="{{ answers.0.Others_Disability_M }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="Others_Disability_F" class="col-sm-8">{{ questions.19.question_text }}</label>
+				  <input id="Others_Disability_F" name="Others_Disability_F" type="text" size="7" value="{{ answers.0.Others_Disability_F }}">
+			  </td>
+      </tr>
+
+      <tr height=70px>
+			  <td>
+                  <label for="NO_Dis_LSG_Scholarshiip_M" class="col-sm-8">{{ questions.20.question_text }}</label>
+				  <input id="NO_Dis_LSG_Scholarshiip_M" name="NO_Dis_LSG_Scholarshiip_M" type="text" size="7" value="{{ answers.0.NO_Dis_LSG_Scholarshiip_M }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="NO_Dis_LSG_Scholarshiip_F" class="col-sm-8">{{ questions.21.question_text }}</label>
+				  <input id="NO_Dis_LSG_Scholarshiip_F" name="NO_Dis_LSG_Scholarshiip_F" type="text" size="7" value="{{ answers.0.NO_Dis_LSG_Scholarshiip_F }}">
+			  </td>
+      </tr>
+      </table>
+    </div>
+      <div class="box box-solid bg-blue-gradient">
+        <div class="box-header with-border">
+          <h3 class="box-title"><i class="fa fa-tag"></i> &nbsp; Scholarshiip/Assistance Details </h3>
+       </div>
+     </div>
+     <div class="box-body">	
+			<table border=0px width=100%>
+  
+
+      <tr height=70px>
+			  <td>
+                  <label for="Other_scholar_M" class="col-sm-8">{{ questions.22.question_text }}</label>
+				  <input id="Other_scholar_M" name="Other_scholar_M" type="text" size="7" value="{{ answers.0.Other_scholar_M }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="Other_scholar_F" class="col-sm-8">{{ questions.23.question_text }}</label>
+				  <input id="Other_scholar_F" name="Other_scholar_F" type="text" size="7" value="{{ answers.0.Other_scholar_F }}">
+			  </td>
+      </tr>
+
+      <tr height=70px>
+			  <td>
+                  <label for="CWD_M" class="col-sm-8">{{ questions.24.question_text }}</label>
+				  <input id="CWD_M" name="CWD_M" type="text" size="7" value="{{ answers.0.CWD_M }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="CWD_F" class="col-sm-8">{{ questions.25.question_text }}</label>
+				  <input id="CWD_F" name="CWD_F" type="text" size="7" value="{{ answers.0.CWD_F }}">
+			  </td>
+      </tr>
+
+      <tr height=70px>
+			  <td>
+                  <label for="RBSY_CHIS_M" class="col-sm-8">{{ questions.26.question_text }}</label>
+				  <input id="RBSY_CHIS_M" name="RBSY_CHIS_M" type="text" size="7" value="{{ answers.0.RBSY_CHIS_M }}">
+              </td>
+			  <td> <label for="inputEmail3" class="col-sm-8"></label> </td>
+			  
+			  <td>
+                  <label for="RBSY_CHIS_F" class="col-sm-8">{{ questions.27.question_text }}</label>
+				  <input id="RBSY_CHIS_F" name="RBSY_CHIS_F" type="text" size="7" value="{{ answers.0.RBSY_CHIS_F }}">
+			  </td>
+      </tr>
+
+      <!-- /.box-body -->
+
+			</table>
+      <div class="box-footer">
+        <button type="submit" name="save_details" class="btn btn-primary">Save Details</button>
+        <button type="submit" name="next_page" class="btn btn-primary pull-right">Next Page </button>
+  <button type="submit" name="prev_page" style='margin-right:10px' class="btn btn-primary pull-right">Prev Page </button>
+      </div>
+              <!-- /.box-footer -->
+		    </div>
+            </form>
+		
+          </div>
+		  </div>
+		  
+          <!-- /.box -->
+</section>
+<!-- Right col -->
+
+
+</section>
+<!-- End of content -->
+{% endblock %}
+
+
