@@ -14,7 +14,7 @@ def login_page(request):
         user = authenticate(username=request.POST['uname'], password=request.POST['passwd'])
         if user is not None and user.is_active:
             login(request, user)
-            return redirect('/home', {'current_user': request.user})
+            return redirect('/login/home', {'current_user': request.user})
         else:
             return redirect('/login')
     else:
@@ -25,7 +25,7 @@ def year_page(request):
         user = authenticate(username=request.POST['uname'], password=request.POST['passwd'])
         if user is not None and user.is_active:
             login(request, user)
-            return redirect('/home', {'current_user': request.user})
+            return redirect('/login/home', {'current_user': request.user})
         else:
             return redirect('/login')
     else:
@@ -61,7 +61,7 @@ def change_password(request):
             user = form.save()
             update_session_auth_hash(request, user)
             messages.success(request, _('Your password was successfully updated!'))
-            return redirect('/home')
+            return redirect('/login/home')
         else:
             messages.error(request, _('Please correct the error below.'))
     else:

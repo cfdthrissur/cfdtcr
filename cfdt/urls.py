@@ -19,9 +19,10 @@ from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^', include('logn.urls')),
+    url(r'^', include('web.urls')),
     url(r'^login/', include('logn.urls')),
     url(r'^data/', include('data.urls')),
     url(r'^rpts/', include('rpts.urls')),
     url(r'^analyse/', include('analyse.urls')),    
+
 ]
